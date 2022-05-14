@@ -197,6 +197,12 @@ public class PlayerController : MonoBehaviour
         runPs.Stop();
     }
 
+    public void StopRun()
+    {
+        speed = walkSpeed;
+        runPs.Stop();
+    }
+
     public void UpdatePowers(Dimension newDimension)
     {
         canUpdateDoubleJump = newDimension == Dimension.Air;
