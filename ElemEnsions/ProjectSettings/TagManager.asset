@@ -12,6 +12,7 @@ TagManager:
   - GameOverUI
   - PauseMenu
   - ExchangePortal
+  - SwitchesUI
   layers:
   - Default
   - TransparentFX
