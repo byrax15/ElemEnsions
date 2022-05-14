@@ -1,3 +1,4 @@
+using Script;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,19 +23,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InteractableManager _interactableManager;
     
     private bool isGrounded;
-    private bool isJumping;
-    private bool canDoubleJump = true;
+    private bool canDoubleJump = false;
+    private bool canWallJump = false;
+    private bool canRun = false;
+    private bool canUpdateDoubleJump = false;
+
+
     private bool isTouchingWall = false;
     private bool canWallJump = true;
     private Transform lastWallJumped;
 
-    private bool canUpdateDoubleJump = true; // TODO update with dimension
+
 
     private Vector3 velocity;
     private Vector3 movement;
     private Transform WallCollided;
     
-    [SerializeField] private float speed;
+    private float speed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float sprintSpeed;
     
@@ -59,9 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) && velocity.y < 0) //pls keep it that way else the jump break
         {
             CheckUpdateCanDoubleJump(true);
             lastWallJumped = null;
@@ -77,7 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             isJumpValid = false;
         }
-        else if (isGrounded || isTouchingWall && velocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
+        else if ((isGrounded || isTouchingWall || canUpdateDoubleJump) && velocity.y < -2 ) //We only reset the velocity if we were falling and before we were grounded
         {
             velocity.y = -2f;
         }
@@ -129,10 +132,21 @@ public class PlayerController : MonoBehaviour
         if(context.performed && (isGrounded || canDoubleJump || wallJump))
         {
             isJumpValid = true;
-            if (!isGrounded)
-                CheckUpdateCanDoubleJump(false);
-            if (wallJump)
+            if (!isGrounded && !wallJump) //Double jump
+
             {
+                if (!canDoubleJump)
+                {
+                    isJumpValid = false;
+                }
+                else
+                {
+                    CheckUpdateCanDoubleJump(false);
+                }
+            }
+            if (wallJump)//wallJump
+            {
+
                 if (lastWallJumped != WallCollided)
                     lastWallJumped = WallCollided;
                 else
@@ -142,7 +156,7 @@ public class PlayerController : MonoBehaviour
             if (isJumpValid)
             {
                 velocity += Vector3.up * jumpForce;
-                if (velocity.magnitude > jumpForce)
+                if (velocity.y > jumpForce)
                     velocity.y = jumpForce;
                 ps.Emit(100);
             }
@@ -151,15 +165,18 @@ public class PlayerController : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(canRun)
         {
-            speed = sprintSpeed;
-            runPs.Play();
-        }
-        if(context.canceled)
-        {
-            speed = walkSpeed;
-            runPs.Stop();
+            if (context.performed)
+            {
+                speed = sprintSpeed;
+                runPs.Play();
+            }
+            if (context.canceled)
+            {
+                speed = walkSpeed;
+                runPs.Stop();
+            }
         }
     }
     public void OnInteract(InputAction.CallbackContext context)
@@ -167,7 +184,6 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
                 _interactableManager.DoCurrentInteraction();
     }
-
     public void OnDrop(InputAction.CallbackContext context)
     {
         if (context.performed && HeldItem != null)
@@ -175,5 +191,15 @@ public class PlayerController : MonoBehaviour
             HeldItem.transform.parent = null;
             HeldItem = null;
         }
+
+    public void UpdatePowers(Dimension newDimension)
+    {
+        canUpdateDoubleJump = newDimension == Dimension.Air;
+        canRun = newDimension == Dimension.Fire;
+        canWallJump = newDimension == Dimension.Earth;
+        if(isTouchingWall)
+            isTouchingWall = newDimension == Dimension.Earth;
+        if (canDoubleJump)
+            canDoubleJump = newDimension == Dimension.Air;
     }
 }
