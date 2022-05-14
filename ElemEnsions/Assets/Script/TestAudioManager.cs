@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class TestAudioManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class TestAudioManager : MonoBehaviour
  
     [SerializeField]
     private AudioClip[] m_clips = null;
+
+    [SerializeField] private float duration = 0.0f;
 
     private AudioManagerGraph graph;
 
@@ -23,13 +26,20 @@ public class TestAudioManager : MonoBehaviour
         graph.Destroy();
         graph = null;
     }
+
+    public void toto(InputAction.CallbackContext ctx) 
+    {
+        if (ctx.performed)
+            graph.Crossfade(1, duration);
+            // graph.Switch(1);
+    }
     
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            graph.Crossfade(1, 10.0f);
-        }
+        // if (Input.GetKeyDown("space"))
+        // {
+            
+        // }
         // int clipIndex = 1;
         // float fadeTime = 80.0f;
         // graph.Crossfade(clipIndex, fadeTime);

@@ -17,6 +17,7 @@ public class AudioManagerGraph : MonoBehaviour
     private AudioManager audioManager;
     private ScriptPlayable<AudioManager> audioManagerPlayable;
 
+
     public bool IsPlaying { get => graph.IsValid() && graph.IsPlaying(); }
 
     public double Time { get => audioManagerPlayable.GetTime(); }
@@ -61,9 +62,7 @@ public class AudioManagerGraph : MonoBehaviour
 
     public void Switch(int index) 
     {
-        if (index >= 0 && !graph.IsPlaying())
-            graph.Play();
-        audioManager.Switch(index);
+        Crossfade(index, 0.5f);
     }
 
     public void Play()
