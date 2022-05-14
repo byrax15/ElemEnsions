@@ -12,25 +12,46 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance = 0.1f;
+    [SerializeField] private float groundDistance = 0.5f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private ParticleSystem ps;
+    [SerializeField] private Transform WallJumpCheck;
 
 
     private bool isGrounded = false;
     private bool isJumping = false;
     private bool canDoubleJump = true;
+    private bool isTouchingWall = false;
+    private bool canWallJump = true;
+
+
+    private bool canUpdateDoubleJump = true; // TODO update with dimension
 
     private Vector3 verticalVelocity;
     private Vector3 movement;
+    private Vector3 WallJumpCheckPositionLow;
 
     [SerializeField] private float speed;
+
+    private void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
-            canDoubleJump = true;
+        if(canWallJump)
+        {
+            isGrounded = Physics.CheckCapsule(groundCheck.position, WallJumpCheck.position, 0.51f, groundMask);
+            isTouchingWall = isGrounded;
+        }
+        else
+        {
+            if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
+                canDoubleJump = true;
+        }
+
 
         // downward acceleration
         if (isGrounded && verticalVelocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
@@ -40,7 +61,7 @@ public class PlayerController : MonoBehaviour
         else if(isJumping)
         {
             if(!isGrounded)
-                canDoubleJump = false;
+                CheckUpdateCanDoubleJump(false);
             verticalVelocity += Vector3.up * jumpForce;
             if (verticalVelocity.magnitude > jumpForce)
                 verticalVelocity.y = jumpForce;
@@ -58,6 +79,17 @@ public class PlayerController : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+    }
+
+    public void CheckUpdateCanDoubleJump(bool newValue)
+    {
+        if(canUpdateDoubleJump)
+            canDoubleJump = newValue;
+    }
+
+    public void CheckWallJump()
+    {
+
     }
 
     public void OnApplicationFocus(bool focus)
@@ -84,6 +116,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if(isTouchingWall && canWallJump)
+        {
+            CheckWallJump();
+        }
+
         isJumping = context.performed && (isGrounded || canDoubleJump);
         if(isJumping)
         {
