@@ -45,20 +45,8 @@ public class PlayerController : MonoBehaviour
     private float speed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float sprintSpeed;
-    
-    private int crystals = 0;
+
     private bool isJumpValid;
-
-    public int Crystals
-    {
-        get => crystals;
-
-        set
-        {
-            crystals = value;
-            GetComponent<PlayerUI>().UpdateCrystalsCount(crystals);
-        }
-    }
 
     private void Start()
     {

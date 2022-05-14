@@ -8,7 +8,7 @@ public class GatherCrystal : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerController>().Crystals += 1;
+            other.gameObject.GetComponent<PlayerInventory>().Crystals += 1;
             Destroy(gameObject);
         }
     }
