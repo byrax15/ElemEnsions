@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,7 +215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &923674728
 PrefabInstance:
@@ -444,7 +444,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c999339742e124fa43386967103d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeldItem: {fileID: 0}
   cr: {fileID: 0}
   cameraTransform: {fileID: 0}
   gravity: -9.8
@@ -527,6 +528,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+  ps: {fileID: 0}
+  WallJumpCheck: {fileID: 0}
+  _interactableManager: {fileID: 0}
+  speed: 0
 --- !u!114 &1536188301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +640,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2916892867025876492
 PrefabInstance:
@@ -654,7 +659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2916892867625206954, guid: 7d551c3846480584fbc1db271b4bc45e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2916892867625206954, guid: 7d551c3846480584fbc1db271b4bc45e, type: 3}
       propertyPath: m_AnchorMax.x
