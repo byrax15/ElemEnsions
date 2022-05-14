@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
 
     private bool isTouchingWall = false;
-    private bool canWallJump = true;
+
     private Transform lastWallJumped;
 
 
