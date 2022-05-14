@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5156218357048804624}
   - component: {fileID: 5156218357048804627}
   - component: {fileID: 1996359468421796686}
-  - component: {fileID: 6856504814008771604}
+  - component: {fileID: 9126551192206772327}
   m_Layer: 0
   m_Name: FlammableWall
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5156218357048804626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0.5, z: 2.78}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7526c9986c892f042be31a5fd5c318f6, type: 2}
+  - {fileID: 2100000, guid: db98ef75441100345b4031970f87b48c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &6856504814008771604
+--- !u!114 &9126551192206772327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5156218357048804626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a9ebe616916f949b06400bb1d902f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 00b8aaf1b7ac04d46a1065404bb466b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

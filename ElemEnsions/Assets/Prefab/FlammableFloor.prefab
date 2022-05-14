@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7205770439433251580}
   - component: {fileID: 7205770439433251581}
   - component: {fileID: -6501092132108107253}
-  - component: {fileID: -914187443845871343}
+  - component: {fileID: 4448119462523027027}
   m_Layer: 0
   m_Name: FlammableFloor
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7205770439433251522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 0.102, z: 2.78}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7526c9986c892f042be31a5fd5c318f6, type: 2}
+  - {fileID: 2100000, guid: cf7f37a57b7f46644ad29fc81abaa231, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &-914187443845871343
+--- !u!114 &4448119462523027027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7205770439433251522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a9ebe616916f949b06400bb1d902f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 00b8aaf1b7ac04d46a1065404bb466b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
