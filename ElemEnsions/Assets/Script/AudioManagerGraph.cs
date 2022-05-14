@@ -65,6 +65,13 @@ public class AudioManagerGraph : MonoBehaviour
         Crossfade(index, 0.5f);
     }
 
+    public void DecreaseVolume(float percent)
+    {
+        if (!graph.IsPlaying())
+            graph.Play();
+        audioManager.DecreaseVolume(percent);
+    }
+
     public void Play()
     {
         if (!graph.IsPlaying())

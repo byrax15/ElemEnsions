@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main:ElemEnsions/Assets/Scenes/FireScene.unity.meta
 guid: 3bb6971f150f3e24c81fa260497b55db
+=======
+<<<<<<< refs/remotes/origin/main
+guid: 503ef5c6ba24738478001a1aeaf39235
+=======
+guid: 80c9c28633bc80449b3ab0e9589c1446
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume:ElemEnsions/Assets/TutorialInfo/Layout.wlt.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

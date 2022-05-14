@@ -29,8 +29,11 @@ public class TestAudioManager : MonoBehaviour
 
     public void toto(InputAction.CallbackContext ctx) 
     {
-        if (ctx.performed)
-            graph.Crossfade(1, duration);
+        if (ctx.performed) {
+            // graph.Crossfade(1, duration);
+            graph.DecreaseVolume(0.85f);
+        }
+            
             // graph.Switch(1);
     }
     

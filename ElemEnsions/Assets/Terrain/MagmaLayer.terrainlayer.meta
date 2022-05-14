@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main:ElemEnsions/Assets/Terrain/MagmaLayer.terrainlayer.meta
 guid: 2cbf8c04c3049a24b976f46cb28bd238
+=======
+<<<<<<< refs/remotes/origin/main
+guid: b233f1ad09dadf14ba8541c010df99d5
+=======
+guid: e420ad6343321a7429c4c41615386a03
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume:ElemEnsions/Assets/Readme.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

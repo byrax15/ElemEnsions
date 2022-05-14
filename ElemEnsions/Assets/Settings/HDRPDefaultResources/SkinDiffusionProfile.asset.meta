@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main
 guid: c316825d2f4b36e4b91f6b718864e348
+=======
+<<<<<<< refs/remotes/origin/main
+guid: 1f73a88fd57cd9d48a2f334aee00fd18
+=======
+guid: db1ae202da3049a48aec35e55095d6ef
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

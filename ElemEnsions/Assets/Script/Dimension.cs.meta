@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main:ElemEnsions/Assets/Script/Dimension.cs.meta
 guid: 53ca0c1bf992d51418328491ed7f279d
+=======
+<<<<<<< refs/remotes/origin/main
+guid: 2015c8c5853cfbc46891353e318f3166
+=======
+guid: cf6d0c8f5205c9e41abafef08a2b9bb2
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume:ElemEnsions/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

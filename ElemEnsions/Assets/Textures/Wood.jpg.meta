@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main:ElemEnsions/Assets/Textures/Wood.jpg.meta
 guid: 82c8e71877129ae4d87aedc1a87eb401
+=======
+<<<<<<< refs/remotes/origin/main
+guid: a498f5027b7916a49ac0a8503d58b41f
+=======
+guid: 8518ab78e56accc44bfd27f72d771e60
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume:ElemEnsions/Assets/TutorialInfo/Icons/Help_Icon.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

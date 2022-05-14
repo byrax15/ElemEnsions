@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main:ElemEnsions/Assets/Script/DimensionChangeMediator.cs.meta
 guid: 8cbcfd4ae66e7f446baefea8d19217f5
+=======
+<<<<<<< refs/remotes/origin/main
+guid: 2b9b145fd1614584ead82285a536471e
+=======
+guid: 019caf42ffb80e4498f51bc87ea18dc5
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume:ElemEnsions/Assets/TutorialInfo/Scripts/Readme.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

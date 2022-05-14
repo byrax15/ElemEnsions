@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main:ElemEnsions/Assets/Textures/Magma.jpg.meta
 guid: 283a2bb6ad32b1f4a98b404fcf82e4a4
+=======
+<<<<<<< refs/remotes/origin/main
+guid: 1472bb771944fd24b8fa10658491d18d
+=======
+guid: 509ded3b2501f7f478ffa7c11a815a91
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume:ElemEnsions/Assets/TutorialInfo/Icons/HDRP.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

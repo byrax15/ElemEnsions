@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main:ElemEnsions/Assets/Terrain/FireTerrain.asset.meta
 guid: 95272127ad32177498deffcf1f9bb0f7
+=======
+<<<<<<< refs/remotes/origin/main
+guid: 0fc51e1dfd8b4a0478d33c2cb6e63ccd
+=======
+guid: a4eb2277052c2424095f27ade1ec8cfb
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume:ElemEnsions/Assets/New Terrain.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

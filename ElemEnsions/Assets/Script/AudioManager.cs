@@ -10,6 +10,8 @@ public class AudioManager : PlayableBehaviour
     private int fadeIndex = 0;
     private float fadeDuration = 0.0f;
 
+    private bool volumeDecreasing;
+
     public int CurrentIndex { get => fadeIndex; }
 
     public float FadeDuration { get => fadeDuration; }
@@ -56,8 +58,17 @@ public class AudioManager : PlayableBehaviour
             mixer.GetInput(index).SetTime(0);
     }
 
+    public void DecreaseVolume(float percent)
+    {
+        float weight = mixer.GetInputWeight(fadeIndex) - percent;        
+        mixer.SetInputWeight(fadeIndex, weight < 0.0f ? 0.0f : weight);
+    }
+
     public override void PrepareFrame(Playable playable, FrameData data)
     {
+        if (volumeDecreasing) {
+            
+        }
         if (fadeDuration > 0)
         {
             bool inProgress = false;

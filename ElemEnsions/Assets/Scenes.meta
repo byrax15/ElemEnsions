@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/main
 guid: 67e22f166016bf7449fbb1f10f719026
+=======
+<<<<<<< refs/remotes/origin/main
+guid: 2d06c14376e612d4f83b1157677d2bc8
+=======
+guid: b970569f863c590448105922e169cc14
+>>>>>>> [feat] - decrease volume
+>>>>>>> [feat] - decrease volume
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
