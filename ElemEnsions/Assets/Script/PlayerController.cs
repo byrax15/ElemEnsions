@@ -30,8 +30,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         // downward acceleration
-        if (isGrounded &&
-            velocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
+        if (isGrounded && velocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
         {
             velocity.y = -2f;
         }
