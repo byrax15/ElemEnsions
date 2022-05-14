@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b8aaf1b7ac04d46a1065404bb466b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractionIndicatorPrefab: {fileID: 1053748070479058314, guid: a7c47aebfc5eb9944be2cd3c88394cc8, type: 3}

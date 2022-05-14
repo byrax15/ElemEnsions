@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject HeldItem;
+
     [SerializeField] private CharacterController cr;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float gravity;
@@ -16,16 +16,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private ParticleSystem ps;
     [SerializeField] private Transform WallJumpCheck;
-
-
-    private bool isGrounded = false;
-    private bool isJumping = false;
+    
+    [SerializeField] private InteractableManager _interactableManager;
+    
+    private bool isGrounded;
+    private bool isJumping;
     private bool canDoubleJump = true;
-    private bool isTouchingWall = false;
+    private bool isTouchingWall;
     private bool canWallJump = true;
 
 
-    private bool canUpdateDoubleJump = true; // TODO update with dimension
+    private bool canUpdateDoubleJump = true;
 
     private Vector3 verticalVelocity;
     private Vector3 movement;
@@ -33,13 +34,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float speed;
 
-    private void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(canWallJump)
         {
@@ -126,5 +121,11 @@ public class PlayerController : MonoBehaviour
         {
             ps.Emit(100);
         }
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+                _interactableManager.DoCurrentInteraction();
     }
 }
