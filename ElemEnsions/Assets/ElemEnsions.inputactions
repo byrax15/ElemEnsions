@@ -42,36 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchFire",
+                    "name": "Interact",
                     "type": "Button",
-                    "id": "bc14eebd-ceb1-4804-a3ed-acfc5df51887",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SwitchWater",
-                    "type": "Button",
-                    "id": "26f821e5-d693-4227-abba-455fca459775",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SwitchEarth",
-                    "type": "Button",
-                    "id": "4e0828a9-3ea4-4a82-9666-51e5cdcd1244",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SwitchAir",
-                    "type": "Button",
-                    "id": "41c9bf87-79f3-4dff-99b9-f9d6ee979533",
+                    "id": "da6cc691-7de2-4c01-a02d-3f57a96db368",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -312,45 +285,12 @@
                 },
                 {
                     "name": "",
-                    "id": "875a0412-465a-4bf1-bd07-23966f1afbc1",
-                    "path": "<Keyboard>/1",
+                    "id": "8c1b8d17-ab8d-4dbf-9dda-3fe3594bf245",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "SwitchFire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ebd963b2-bc06-4e15-94e6-aa685f038b15",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "SwitchWater",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9b09cdf7-c1bf-4ce7-affb-8b1d1c0d2d2b",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "SwitchEarth",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2415f1a3-a3b3-4596-8651-b15becae12d6",
-                    "path": "<Keyboard>/4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "SwitchAir",
+                    "groups": "Touch;Gamepad;Keyboard&Mouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
