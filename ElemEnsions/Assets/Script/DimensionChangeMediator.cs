@@ -14,7 +14,7 @@ namespace Script
 
         private void Start()
         {
-            ChangeDimension(Dimension.None);
+            ChangeDimension(Dimension.Base);
         }
 
         public void ChangeDimension(Dimension newDimension)
@@ -34,7 +34,7 @@ namespace Script
                     return;
 
                 ChangeDimension(dimension == _activeDimension
-                    ? Dimension.None
+                    ? Dimension.Base
                     : dimension
                 );
             }
