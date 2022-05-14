@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject pauseMenu;
 
+    private bool canPause = false;
+
     void Start() 
     {
         mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
@@ -19,7 +21,7 @@ public class MenuManager : MonoBehaviour
         pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
 
         mainMenu.SetActive(true);
-        gameUI.SetActive(false);
+        ToogleGameUI(false);
         gameOver.SetActive(false);
         pauseMenu.SetActive(false);
 
@@ -37,7 +39,7 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         mainMenu.SetActive(false);
-        gameUI.SetActive(true);
+        ToogleGameUI(true);
         gameOver.SetActive(false);
         Time.timeScale = 1;
     }
@@ -45,20 +47,29 @@ public class MenuManager : MonoBehaviour
     public void PauseGame()
     {
         TooglePause(true);
-        gameUI.SetActive(false);
+        ToogleGameUI(false);
+    }
+
+    public void ToogleGameUI(bool mode)
+    {
+        canPause = mode;
+        gameUI.SetActive(mode);
     }
 
     public void ContinueGame() 
     {
         TooglePause(false);
-        gameUI.SetActive(true);
+        ToogleGameUI(true);
     }
 
     private void TooglePause(bool pause)
     {
-        Time.timeScale = (pause ? 0 : 1);
-        pauseMenu.SetActive(pause);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = !pause;
+        if(canPause)
+        {
+            Time.timeScale = (pause ? 0 : 1);
+            pauseMenu.SetActive(pause);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = !pause;
+        }
     }
 
     public void ActivateMainMenu()
@@ -68,10 +79,7 @@ public class MenuManager : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    public void RestartGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     public void QuitGame()
     {
