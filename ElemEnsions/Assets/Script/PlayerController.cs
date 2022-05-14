@@ -6,15 +6,15 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController cr;
-    public float speed;
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private float gravity = -9.8f;
+    [SerializeField] private float jumpForce = 100.0f;
+    [SerializeField] private float rotationSpeed = 0.8f;
 
-    public float gravity = -9.8f;
-    public float jumpForce = 100.0f;
-    public float rotationSpeed = 0.8f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.1f;
+    [SerializeField] private LayerMask groundMask;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.1f;
-    public LayerMask groundMask;
 
     private bool isGrounded = false;
     private bool isJumping = false;
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Vector3 movement;
 
-    [SerializeField] private Transform cameraTransform;
+    private float speed;
 
     // Update is called once per frame
     void Update()
