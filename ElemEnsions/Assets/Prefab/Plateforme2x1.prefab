@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8550488316305011389}
+  - component: {fileID: 673240462872806787}
   - component: {fileID: -4843827983867792581}
   m_Layer: 0
   m_Name: Plateforme2x1
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673240462872806787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071023150179592199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445399ff440d9046b3053891282342b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affinity: 00000000
 --- !u!114 &-4843827983867792581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,8 +59,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e49758951c6a4e8faf5e41ede824d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affinity:
-    affinity: 00000000
   dimensionChangeSource: {fileID: 0}
 --- !u!1001 &7622847202916687590
 PrefabInstance:

@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Script
 {
-    [Serializable]
-    public struct DimensionAffinity
+    [ExecuteInEditMode]
+    public class DimensionAffinity : MonoBehaviour
     {
-        public Dimension[] affinity;
+        public Dimension[] affinity = {Dimension.Base,};
 
         public bool HasAffinityWith(Dimension d) => affinity?.Contains(d) ?? false;
     }
