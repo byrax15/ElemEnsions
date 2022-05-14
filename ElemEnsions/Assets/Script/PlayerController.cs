@@ -172,10 +172,9 @@ public class PlayerController : MonoBehaviour
                 speed = sprintSpeed;
                 runPs.Play();
             }
-            if (context.canceled)
+            else
             {
-                speed = walkSpeed;
-                runPs.Stop();
+                StopRun();
             }
         }
     }
@@ -192,6 +191,12 @@ public class PlayerController : MonoBehaviour
             HeldItem = null;
         }
 
+    public void StopRun()
+    {
+        speed = walkSpeed;
+        runPs.Stop();
+    }
+
     public void UpdatePowers(Dimension newDimension)
     {
         canUpdateDoubleJump = newDimension == Dimension.Air;
@@ -201,5 +206,8 @@ public class PlayerController : MonoBehaviour
             isTouchingWall = newDimension == Dimension.Earth;
         if (canDoubleJump)
             canDoubleJump = newDimension == Dimension.Air;
+        if (newDimension != Dimension.Fire)
+            StopRun();
+
     }
 }
