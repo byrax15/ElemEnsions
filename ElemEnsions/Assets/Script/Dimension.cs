@@ -18,7 +18,7 @@ namespace Script
             return s.Contains(d.ToString());
         }
 
-        public static bool TryGetContainedDimensionName(this string s, out Dimension foundDimension)
+        public static bool TryGetContainedDimension(this string s, out Dimension foundDimension)
         {
             var dimensions = Enum.GetValues(typeof(Dimension));
             foreach (var boxedDimension in dimensions)
@@ -30,7 +30,7 @@ namespace Script
                 {
                     foundDimension = dimension;
                     return true;
-                } 
+                }
             }
 
             foundDimension = Dimension.None;

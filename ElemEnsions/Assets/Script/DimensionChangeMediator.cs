@@ -7,13 +7,14 @@ namespace Script
 {
     public class DimensionChangeMediator : MonoBehaviour
     {
-        public UnityEvent<Dimension, Dimension> dimensionChanged = new();
+        [SerializeField]
+        private DimensionChangeEvent dimensionChanged = new();
 
-        public Dimension _activeDimension;
+        private Dimension _activeDimension;
 
         private void Start()
         {
-            _activeDimension = Dimension.None;
+            ChangeDimension(Dimension.None);
         }
 
         public void ChangeDimension(Dimension newDimension)
@@ -29,16 +30,24 @@ namespace Script
         {
             if (callback.started)
             {
-                if (!callback.action.name.TryGetContainedDimensionName(out var dimension))
+                if (!callback.action.name.TryGetContainedDimension(out var dimension))
                     return;
 
                 ChangeDimension(dimension == _activeDimension
                     ? Dimension.None
                     : dimension
                 );
-
-                Debug.Log(_activeDimension.ToString());
             }
+        }
+
+        public void AddListener(UnityAction<Dimension,Dimension> callback)
+        {
+            dimensionChanged.AddListener(callback);
+        }
+
+        public void RemoveListener(UnityAction<Dimension,Dimension> callback)
+        {
+            dimensionChanged.RemoveListener(callback);
         }
     }
 }
