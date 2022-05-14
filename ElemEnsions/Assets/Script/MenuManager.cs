@@ -58,8 +58,8 @@ public class MenuManager : MonoBehaviour
 
     public void ContinueGame() 
     {
-        TooglePause(false);
         ToogleGameUI(true);
+        TooglePause(false);
     }
 
     private void TooglePause(bool pause)
