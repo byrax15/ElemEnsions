@@ -24,7 +24,17 @@ public class PlayerController : MonoBehaviour
 
     private float speed;
 
-    // Update is called once per frame
+    private int crystals = 0;
+    public int Crystals { 
+        get => crystals;
+
+        set 
+        {
+            crystals = value;
+            GetComponent<PlayerUI>().UpdateCrystalsCount(crystals);
+        }
+    }
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
