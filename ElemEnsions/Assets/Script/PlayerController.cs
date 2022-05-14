@@ -77,12 +77,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.performed)
-        {
-            if(isGrounded)
-            {
-                isJumping = true;
-            }
-        }
+        isJumping = context.performed && isGrounded;
     }
 }
