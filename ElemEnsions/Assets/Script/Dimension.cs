@@ -2,9 +2,10 @@ using System;
 
 namespace Script
 {
+     [Serializable]
     public enum Dimension
     {
-        None,
+        Base,
         Fire,
         Water,
         Earth,
@@ -33,7 +34,7 @@ namespace Script
                 }
             }
 
-            foundDimension = Dimension.None;
+            foundDimension = Dimension.Base;
             return false;
         }
     }
