@@ -529,9 +529,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ps: {fileID: 0}
+  runPs: {fileID: 0}
   WallJumpCheck: {fileID: 0}
+  CWJ: {fileID: 0}
   _interactableManager: {fileID: 0}
   speed: 0
+  walkSpeed: 0
+  sprintSpeed: 0
 --- !u!114 &1536188301
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4449487, g: 0.48868656, b: 0.54222244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -956,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 65a5ed534b477c540be6aa5fb2b34283, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 54cb9a5531176b14c8f60790bccb95d5, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -985,22 +985,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9f0404eb-c2b3-40ab-bc1d-faf4bbde563e
     m_ActionName: Player/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2116081559}
-        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
-        m_MethodName: DebugChangeDimension
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: bc14eebd-ceb1-4804-a3ed-acfc5df51887
-    m_ActionName: Player/SwitchDimension[/Keyboard/1]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 86cea404-411e-4b15-bf97-e4fb4d699f5a
@@ -1042,21 +1026,9 @@ MonoBehaviour:
     m_ActionId: 2e34528b-68eb-424c-a7b9-ccf5f7152b1e
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2116081559}
-        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
-        m_MethodName: DebugChangeDimension
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 26f821e5-d693-4227-abba-455fca459775
-    m_ActionName: Player/SwitchWater[/Keyboard/2]
+      m_Calls: []
+    m_ActionId: da6cc691-7de2-4c01-a02d-3f57a96db368
+    m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2116081559}
@@ -1071,8 +1043,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 4e0828a9-3ea4-4a82-9666-51e5cdcd1244
-    m_ActionName: Player/SwitchEarth[/Keyboard/3]
+    m_ActionId: 0b37e862-2db4-43bc-8b1e-c68dff31cfc1
+    m_ActionName: Player/SwapFire[/Keyboard/1]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2116081559}
@@ -1087,8 +1059,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 41c9bf87-79f3-4dff-99b9-f9d6ee979533
-    m_ActionName: Player/SwitchAir[/Keyboard/4]
+    m_ActionId: 970b8646-b577-4e77-ad2f-e0a714a6c5e1
+    m_ActionName: Player/SwapWater[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2116081559}
+        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
+        m_MethodName: DebugChangeDimension
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ea6304e-ed15-4c73-91e2-dd91ecf077b2
+    m_ActionName: Player/SwapEarth[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2116081559}
+        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
+        m_MethodName: DebugChangeDimension
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 729e3de6-037a-4669-ac83-db3269eb82ca
+    m_ActionName: Player/SwapAir[/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bfa0dd70-4476-4fde-890e-4d0e366a4c2b
+    m_ActionName: Player/Run[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aa4f2d1f-862e-4a63-ac84-185805c20eda
+    m_ActionName: Player/Drop[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1105,6 +1117,7 @@ GameObject:
   - component: {fileID: 2140993529}
   - component: {fileID: 2140993528}
   - component: {fileID: 2140993530}
+  - component: {fileID: 2140993531}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1202,6 +1215,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mediator: {fileID: 2116081559}
+--- !u!114 &2140993531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140993527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!33 &279753328452521452
 MeshFilter:
   m_ObjectHideFlags: 0
