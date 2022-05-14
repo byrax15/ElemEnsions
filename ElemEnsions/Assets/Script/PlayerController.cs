@@ -58,11 +58,9 @@ public class PlayerController : MonoBehaviour
         if(focus)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            return;
         }
-        else
-        {
-            Cursor.lockState= CursorLockMode.None;
-        }
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -72,7 +70,6 @@ public class PlayerController : MonoBehaviour
             Vector2 input = context.ReadValue<Vector2>();
         
             movement = speed * new Vector3(input.x, 0.0f, input.y).normalized;
-            Debug.Log(movement);
         }
         if(context.canceled)
             movement = Vector3.zero;
