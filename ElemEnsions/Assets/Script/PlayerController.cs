@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Vector3 movement;
 
-    private float speed;
+    [SerializeField] private float speed;
 
     // Update is called once per frame
     void Update()
