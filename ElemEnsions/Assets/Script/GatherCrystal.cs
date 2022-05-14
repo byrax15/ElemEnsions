@@ -6,10 +6,10 @@ public class GatherCrystal : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.tag == "Crystal")
+        if(other.tag == "Player")
         {
-            GetComponent<PlayerController>().Crystals += 1;
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<PlayerController>().Crystals += 1;
+            Destroy(gameObject);
         }
     }
 }
