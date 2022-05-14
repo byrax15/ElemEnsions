@@ -23,10 +23,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 movement;
 
     [SerializeField] private Transform cameraTransform;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
@@ -44,7 +40,6 @@ public class PlayerController : MonoBehaviour
             velocity += Vector3.up * jumpForce;
             isJumping = false;
             isGrounded = false;
-            Debug.Log(velocity.y);
         }
         else
         {
