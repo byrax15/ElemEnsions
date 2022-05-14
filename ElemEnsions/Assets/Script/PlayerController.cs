@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private ParticleSystem ps;
+    [SerializeField] private ParticleSystem runPs;
     [SerializeField] private Transform WallJumpCheck;
     [SerializeField] private CheckWallJump CWJ;
 
@@ -34,11 +35,13 @@ public class PlayerController : MonoBehaviour
 
     private Transform WallCollided;
 
-    [SerializeField] private float speed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float sprintSpeed;
 
+    private float speed;
     private void Start()
     {
-        
+        speed = walkSpeed;
     }
 
     // Update is called once per frame
@@ -72,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = movement.x * cameraTransform.right.normalized + movement.z * cameraTransform.forward.normalized;
         move.y = 0.0f;
-        cr.Move((velocity + move) * Time.deltaTime);
+        cr.Move((velocity + speed * move) * Time.deltaTime);
 
         Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
@@ -100,7 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 input = context.ReadValue<Vector2>();
         
-            movement = speed * new Vector3(input.x, 0.0f, input.y).normalized;
+            movement = new Vector3(input.x, 0.0f, input.y).normalized;
         }
         if(context.canceled)
             movement = Vector3.zero;
@@ -130,6 +133,20 @@ public class PlayerController : MonoBehaviour
                     velocity.y = jumpForce;
                 ps.Emit(100);
             }
+        }
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            speed = sprintSpeed;
+            runPs.Play();
+        }
+        if(context.canceled)
+        {
+            speed = walkSpeed;
+            runPs.Stop();
         }
     }
 }
