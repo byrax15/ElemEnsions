@@ -183,6 +183,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7083752532264496996, guid: 6364d00296dd76c4cad4954a403b7ca8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 592f20914d6e09a4bae255d94da3d68e, type: 2}
     - target: {fileID: 7083752532264496998, guid: 6364d00296dd76c4cad4954a403b7ca8, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -234,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 9075026485698324243, guid: 6364d00296dd76c4cad4954a403b7ca8, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6364d00296dd76c4cad4954a403b7ca8, type: 3}
 --- !u!1 &687401715
@@ -588,15 +592,15 @@ PrefabInstance:
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMove
@@ -629,27 +633,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3997375552153303341, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
   m_PrefabInstance: {fileID: 1212522543}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1212522545 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7074343582014322668, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-  m_PrefabInstance: {fileID: 1212522543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!143 &1212522551 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 5176448406791949340, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
   m_PrefabInstance: {fileID: 1212522543}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1212522552 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3777168139265940020, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-  m_PrefabInstance: {fileID: 1212522543}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c999339742e124fa43386967103d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1254977369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 3313295287119665933, guid: 4a6e0436af3b93d408fb1e22dd2cc072, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ed5d48fb6aa8704ca138fae71d3c66e, type: 2}
+      objectReference: {fileID: 2100000, guid: 592f20914d6e09a4bae255d94da3d68e, type: 2}
     - target: {fileID: 3313295287119665935, guid: 4a6e0436af3b93d408fb1e22dd2cc072, type: 3}
       propertyPath: m_Name
       value: FlammableSphere
@@ -712,7 +700,7 @@ PrefabInstance:
     - target: {fileID: 5898283929383604804, guid: 4a6e0436af3b93d408fb1e22dd2cc072, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6e0436af3b93d408fb1e22dd2cc072, type: 3}
 --- !u!1 &1314033099
@@ -995,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 4448119462523027027, guid: 5000cc9e71e02494b9e6e8b2ca9ab6e6, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     - target: {fileID: 7205770439433251522, guid: 5000cc9e71e02494b9e6e8b2ca9ab6e6, type: 3}
       propertyPath: m_Name
       value: FlammableFloor
@@ -1003,7 +991,7 @@ PrefabInstance:
     - target: {fileID: 7205770439433251580, guid: 5000cc9e71e02494b9e6e8b2ca9ab6e6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ed5d48fb6aa8704ca138fae71d3c66e, type: 2}
+      objectReference: {fileID: 2100000, guid: 592f20914d6e09a4bae255d94da3d68e, type: 2}
     - target: {fileID: 7205770439433251582, guid: 5000cc9e71e02494b9e6e8b2ca9ab6e6, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1244,6 +1232,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1640964889 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7074343582014322668, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
+  m_PrefabInstance: {fileID: 1212522543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1680642759 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3777168139265940020, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
+  m_PrefabInstance: {fileID: 1212522543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c999339742e124fa43386967103d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759005466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1339,7 @@ PrefabInstance:
     - target: {fileID: 5156218357048804624, guid: 99e2593088b01b94297a5975cc46dc92, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ed5d48fb6aa8704ca138fae71d3c66e, type: 2}
+      objectReference: {fileID: 2100000, guid: 592f20914d6e09a4bae255d94da3d68e, type: 2}
     - target: {fileID: 5156218357048804626, guid: 99e2593088b01b94297a5975cc46dc92, type: 3}
       propertyPath: m_Name
       value: FlammableWall
@@ -1387,7 +1391,7 @@ PrefabInstance:
     - target: {fileID: 9126551192206772327, guid: 99e2593088b01b94297a5975cc46dc92, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99e2593088b01b94297a5975cc46dc92, type: 3}
 --- !u!198 &2133745729 stripped
@@ -1413,11 +1417,11 @@ PrefabInstance:
     - target: {fileID: 8660303362559330511, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: _playerHand
       value: 
-      objectReference: {fileID: 1212522545}
+      objectReference: {fileID: 1640964889}
     - target: {fileID: 8660303362559330511, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1680642759}
     - target: {fileID: 9197807821801205542, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: m_RootOrder
       value: 1
