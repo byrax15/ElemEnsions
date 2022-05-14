@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,12 +33,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Vector3 movement;
     private Transform WallCollided;
+    
     [SerializeField] private float speed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float sprintSpeed;
-
-
-
+    
     private int crystals = 0;
     private bool isJumpValid;
 
@@ -60,10 +57,11 @@ public class PlayerController : MonoBehaviour
         speed = walkSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) && velocity.y < 0)
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
+        if (isGrounded && velocity.y < 0)
         {
             CheckUpdateCanDoubleJump(true);
             lastWallJumped = null;
@@ -73,8 +71,7 @@ public class PlayerController : MonoBehaviour
             WallCollided = CWJ.GetWall();
             isTouchingWall = WallCollided != null;
         }
-
-
+        
         // downward acceleration
         if(isJumpValid)
         {
@@ -102,9 +99,7 @@ public class PlayerController : MonoBehaviour
         if(canUpdateDoubleJump)
             canDoubleJump = newValue;
     }
-
-
-
+    
     public void OnApplicationFocus(bool focus)
     {
         if(focus)
@@ -130,7 +125,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         bool wallJump = canWallJump && isTouchingWall && !isGrounded;
-      //  isJumping = context.performed && (isGrounded || canDoubleJump || wallJump);
+        
         if(context.performed && (isGrounded || canDoubleJump || wallJump))
         {
             isJumpValid = true;
@@ -167,7 +162,7 @@ public class PlayerController : MonoBehaviour
             runPs.Stop();
         }
     }
-public void OnInteract(InputAction.CallbackContext context)
+    public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
                 _interactableManager.DoCurrentInteraction();
