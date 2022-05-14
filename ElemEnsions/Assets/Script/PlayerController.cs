@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController cr;
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float gravity = -9.8f;
-    [SerializeField] private float jumpForce = 100.0f;
-    [SerializeField] private float rotationSpeed = 0.8f;
+    [SerializeField] private float gravity;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float rotationSpeed;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.1f;
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
     private bool isJumping = false;
+    private bool canDoubleJump = true;
 
     private Vector3 velocity;
     private Vector3 movement;
@@ -27,7 +28,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
+            canDoubleJump = true;
 
         // downward acceleration
         if (isGrounded && velocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
         }
         else if(isJumping)
         {
+            if(!isGrounded)
+                canDoubleJump = false;
             velocity += Vector3.up * jumpForce;
             isJumping = false;
             isGrounded = false;
@@ -77,6 +81,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        isJumping = context.performed && isGrounded;
+        isJumping = context.performed && (isGrounded || canDoubleJump);
     }
 }
