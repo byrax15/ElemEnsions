@@ -51,9 +51,45 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Drop",
+                    "name": "SwapFire",
                     "type": "Button",
-                    "id": "f049c895-fd2d-42ec-a098-02b9adad2432",
+                    "id": "0b37e862-2db4-43bc-8b1e-c68dff31cfc1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwapWater",
+                    "type": "Button",
+                    "id": "970b8646-b577-4e77-ad2f-e0a714a6c5e1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwapEarth",
+                    "type": "Button",
+                    "id": "4ea6304e-ed15-4c73-91e2-dd91ecf077b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwapAir",
+                    "type": "Button",
+                    "id": "729e3de6-037a-4669-ac83-db3269eb82ca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Run",
+                    "type": "Button",
+                    "id": "bfa0dd70-4476-4fde-890e-4d0e366a4c2b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -305,12 +341,56 @@
                 },
                 {
                     "name": "",
-                    "id": "ea1f7efa-1f05-47e8-850c-33e96b35443e",
-                    "path": "<Keyboard>/q",
+                    "id": "5754966a-c467-4126-852d-1d474b440357",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch",
-                    "action": "Drop",
+                    "groups": "",
+                    "action": "SwapFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09d055e0-5732-4a27-9b2c-0c0bf9cb3deb",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwapWater",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ca80099-700e-45a7-a5aa-a014ffb6ad6c",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwapEarth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "342fecf4-d356-4e64-8ddb-ac59cb4d5625",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwapAir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55b4c369-e3e9-4b13-83d4-c1057b015758",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
