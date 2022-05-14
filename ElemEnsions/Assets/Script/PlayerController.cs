@@ -23,6 +23,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 movement;
 
     private float speed;
+    public int Crystals { get; set; }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Crystals = 0;
+    }
 
     // Update is called once per frame
     void Update()
