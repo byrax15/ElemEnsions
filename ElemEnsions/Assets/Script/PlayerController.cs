@@ -14,13 +14,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.1f;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private ParticleSystem ps;
 
 
     private bool isGrounded = false;
     private bool isJumping = false;
     private bool canDoubleJump = true;
 
-    private Vector3 velocity;
+    private Vector3 verticalVelocity;
     private Vector3 movement;
 
     [SerializeField] private float speed;
@@ -32,26 +33,28 @@ public class PlayerController : MonoBehaviour
             canDoubleJump = true;
 
         // downward acceleration
-        if (isGrounded && velocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
+        if (isGrounded && verticalVelocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
         {
-            velocity.y = -2f;
+            verticalVelocity.y = -2f;
         }
         else if(isJumping)
         {
             if(!isGrounded)
                 canDoubleJump = false;
-            velocity += Vector3.up * jumpForce;
+            verticalVelocity += Vector3.up * jumpForce;
+            if (verticalVelocity.magnitude > jumpForce)
+                verticalVelocity.y = jumpForce;
             isJumping = false;
             isGrounded = false;
         }
         else
         {
-            velocity.y += gravity * Time.deltaTime;
+            verticalVelocity.y += gravity * Time.deltaTime;
         }
 
         Vector3 move = movement.x * cameraTransform.right.normalized + movement.z * cameraTransform.forward.normalized;
         move.y = 0.0f;
-        cr.Move((velocity + move) * Time.deltaTime);
+        cr.Move((verticalVelocity + move) * Time.deltaTime);
 
         Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
@@ -82,5 +85,9 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         isJumping = context.performed && (isGrounded || canDoubleJump);
+        if(isJumping)
+        {
+            ps.Emit(100);
+        }
     }
 }
