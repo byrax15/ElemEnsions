@@ -34,7 +34,18 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float speed;
 
-    private void Update()
+    private int crystals = 0;
+    public int Crystals { 
+        get => crystals;
+
+        set 
+        {
+            crystals = value;
+            GetComponent<PlayerUI>().UpdateCrystalsCount(crystals);
+        }
+    }
+
+    void Update()
     {
         if(canWallJump)
         {

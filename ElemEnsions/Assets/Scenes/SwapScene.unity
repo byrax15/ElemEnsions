@@ -450,8 +450,6 @@ MonoBehaviour:
   dimensionChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  _activeDimension: 0
 --- !u!114 &2116081560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 65a5ed534b477c540be6aa5fb2b34283, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 04d48c52dc855674faa3ff6777aaab78, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -709,5 +707,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5133f9cc34962854ebd5aead20dee2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediator: {fileID: 2116081559}
-  _light: {fileID: 0}
+  mediator: {fileID: 0}
