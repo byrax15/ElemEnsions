@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject HeldItem;
+
     [SerializeField] private CharacterController cr;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float gravity;
@@ -12,16 +14,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance;
+    [SerializeField] private float groundDistance = 0.5f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private ParticleSystem ps;
-    [SerializeField] private ParticleSystem runPs;
     [SerializeField] private Transform WallJumpCheck;
-    [SerializeField] private CheckWallJump CWJ;
-
-
-    private bool isGrounded = false;
-    private bool isJumpValid = false;
+    
+    [SerializeField] private InteractableManager _interactableManager;
+    
+    private bool isGrounded;
+    private bool isJumping;
     private bool canDoubleJump = true;
     private bool isTouchingWall = false;
     private bool canWallJump = true;
@@ -32,8 +33,14 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 velocity;
     private Vector3 movement;
-
     private Transform WallCollided;
+    [SerializeField] private float speed;
+
+
+
+    private int crystals = 0;
+    public int Crystals { 
+        get => crystals;
 
     [SerializeField] private float walkSpeed;
     [SerializeField] private float sprintSpeed;
@@ -86,6 +93,8 @@ public class PlayerController : MonoBehaviour
         if(canUpdateDoubleJump)
             canDoubleJump = newValue;
     }
+
+
 
     public void OnApplicationFocus(bool focus)
     {
@@ -148,5 +157,10 @@ public class PlayerController : MonoBehaviour
             speed = walkSpeed;
             runPs.Stop();
         }
+    }
+public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+                _interactableManager.DoCurrentInteraction();
     }
 }

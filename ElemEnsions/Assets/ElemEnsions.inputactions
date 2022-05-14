@@ -50,6 +50,15 @@
                     "interactions": "",
                     "initialStateCheck": false
                 }
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "da6cc691-7de2-4c01-a02d-3f57a96db368",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
             ],
             "bindings": [
                 {
@@ -278,30 +287,8 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "Keyboard&Mouse;Gamepad;Touch",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7f2de29d-33b8-4d82-a12d-03b9296fcd2b",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4db2b14f-3bd1-4307-a9c2-8c8ed923b86a",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
