@@ -605,9 +605,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cr: {fileID: 1446201844617428248}
   cameraTransform: {fileID: 1446201843553282966}
-  gravity: -9.8
+  gravity: -20
   jumpForce: 10
-  rotationSpeed: 0.8
+  rotationSpeed: 10
   groundCheck: {fileID: 1446201844671968986}
   groundDistance: 0.1
   groundMask:
