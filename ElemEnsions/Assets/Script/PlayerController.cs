@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundDistance = 0.5f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private ParticleSystem ps;
+    [SerializeField] private ParticleSystem runPs;
+
     [SerializeField] private Transform WallJumpCheck;
-    
+    [SerializeField] private CheckWallJump CWJ;
     [SerializeField] private InteractableManager _interactableManager;
     
     private bool isGrounded;
@@ -28,24 +30,31 @@ public class PlayerController : MonoBehaviour
     private bool canWallJump = true;
     private Transform lastWallJumped;
 
-
     private bool canUpdateDoubleJump = true; // TODO update with dimension
 
     private Vector3 velocity;
     private Vector3 movement;
     private Transform WallCollided;
     [SerializeField] private float speed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float sprintSpeed;
 
 
 
     private int crystals = 0;
-    public int Crystals { 
+    private bool isJumpValid;
+
+    public int Crystals
+    {
         get => crystals;
 
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float sprintSpeed;
+        set
+        {
+            crystals = value;
+            GetComponent<PlayerUI>().UpdateCrystalsCount(crystals);
+        }
+    }
 
-    private float speed;
     private void Start()
     {
         speed = walkSpeed;

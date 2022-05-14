@@ -171,6 +171,11 @@ MonoBehaviour:
   _proximityIndicatorPrefab: {fileID: 5461810957638705914, guid: b418a35a2a4cf884285bac05b93a7fe2, type: 3}
   _playerTransform: {fileID: 1212522544}
   _playerCamera: {fileID: 687401716}
+--- !u!4 &416456631 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1649884478865390838, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
+  m_PrefabInstance: {fileID: 1212522543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &418027669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3207145373150946969, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
@@ -234,7 +239,7 @@ PrefabInstance:
     - target: {fileID: 9075026485698324243, guid: 6364d00296dd76c4cad4954a403b7ca8, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1212522553}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6364d00296dd76c4cad4954a403b7ca8, type: 3}
 --- !u!1 &687401715
@@ -445,6 +450,14 @@ PrefabInstance:
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1969420631, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 687401717}
+    - target: {fileID: 1969420631, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
+      propertyPath: _interactableManager
+      value: 
+      objectReference: {fileID: 68905830}
     - target: {fileID: 1297887422935609721, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: cameraTransform
       value: 
@@ -562,52 +575,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 687401716}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
-      value: da6cc691-7de2-4c01-a02d-3f57a96db368
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
-      value: Player/Interact[/Keyboard/e]
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1212522552}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1212522552}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1212522552}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnMove
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1212522553}
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnJump
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8800425573914682001, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -629,19 +606,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3997375552153303341, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
   m_PrefabInstance: {fileID: 1212522543}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1212522545 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7074343582014322668, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
-  m_PrefabInstance: {fileID: 1212522543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!143 &1212522551 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 5176448406791949340, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
   m_PrefabInstance: {fileID: 1212522543}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1212522552 stripped
+--- !u!114 &1212522553 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3777168139265940020, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1969420631, guid: 1b965ef8f52f46c43960436dcd76ff9d, type: 3}
   m_PrefabInstance: {fileID: 1212522543}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -712,7 +684,7 @@ PrefabInstance:
     - target: {fileID: 5898283929383604804, guid: 4a6e0436af3b93d408fb1e22dd2cc072, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1212522553}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6e0436af3b93d408fb1e22dd2cc072, type: 3}
 --- !u!1 &1314033099
@@ -960,7 +932,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1194606, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -995,7 +967,7 @@ PrefabInstance:
     - target: {fileID: 4448119462523027027, guid: 5000cc9e71e02494b9e6e8b2ca9ab6e6, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1212522553}
     - target: {fileID: 7205770439433251522, guid: 5000cc9e71e02494b9e6e8b2ca9ab6e6, type: 3}
       propertyPath: m_Name
       value: FlammableFloor
@@ -1387,7 +1359,7 @@ PrefabInstance:
     - target: {fileID: 9126551192206772327, guid: 99e2593088b01b94297a5975cc46dc92, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1212522553}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99e2593088b01b94297a5975cc46dc92, type: 3}
 --- !u!198 &2133745729 stripped
@@ -1413,11 +1385,11 @@ PrefabInstance:
     - target: {fileID: 8660303362559330511, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: _playerHand
       value: 
-      objectReference: {fileID: 1212522545}
+      objectReference: {fileID: 416456631}
     - target: {fileID: 8660303362559330511, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: _playerController
       value: 
-      objectReference: {fileID: 1212522552}
+      objectReference: {fileID: 1212522553}
     - target: {fileID: 9197807821801205542, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: m_RootOrder
       value: 1

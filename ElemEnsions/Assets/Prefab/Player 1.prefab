@@ -4822,6 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3207145373150946969}
   - component: {fileID: 6144343221598433896}
+  - component: {fileID: 1250530095}
   m_Layer: 0
   m_Name: WallJumpCheck
   m_TagString: Untagged
@@ -4858,6 +4859,19 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1250530095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453277341863141284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d31daaf586d7e4d9525adc21b973f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallDist: 0.6
 --- !u!1 &1516471699174181091
 GameObject:
   m_ObjectHideFlags: 0
@@ -9742,9 +9756,9 @@ GameObject:
   - component: {fileID: 1196533648050301016}
   - component: {fileID: 1615372346826691494}
   - component: {fileID: 526323431492062470}
-  - component: {fileID: 1297887422935609721}
   - component: {fileID: 8800425573914682001}
   - component: {fileID: 5176448406791949340}
+  - component: {fileID: 1969420631}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Untagged
@@ -9836,34 +9850,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1297887422935609721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306008385921086371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de892c8f80ef81408e60a2e60dcc3b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cr: {fileID: 5176448406791949340}
-  cameraTransform: {fileID: 0}
-  gravity: -20
-  jumpForce: 10
-  rotationSpeed: 10
-  groundCheck: {fileID: 1978414872351432465}
-  groundDistance: 0.51
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  ps: {fileID: 640757915}
-  runPs: {fileID: 6670948760863281298}
-  WallJumpCheck: {fileID: 3207145373150946969}
-  CWJ: {fileID: 1093416334}
-  walkSpeed: 6
-  sprintSpeed: 12
 --- !u!114 &8800425573914682001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9891,7 +9877,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297887422935609721}
+      - m_Target: {fileID: 1969420631}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -9955,7 +9941,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297887422935609721}
+      - m_Target: {fileID: 1969420631}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -9971,7 +9957,39 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297887422935609721}
+      - m_Target: {fileID: 4306008385921086371}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+    m_ActionId: da6cc691-7de2-4c01-a02d-3f57a96db368
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0b37e862-2db4-43bc-8b1e-c68dff31cfc1
+    m_ActionName: Player/SwapFire[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 970b8646-b577-4e77-ad2f-e0a714a6c5e1
+    m_ActionName: Player/SwapWater[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ea6304e-ed15-4c73-91e2-dd91ecf077b2
+    m_ActionName: Player/SwapEarth[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 729e3de6-037a-4669-ac83-db3269eb82ca
+    m_ActionName: Player/SwapAir[/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1969420631}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnRun
         m_Mode: 0
@@ -9983,7 +10001,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 1b53416d-53d9-4182-81c4-4fac0fdd141c
+    m_ActionId: bfa0dd70-4476-4fde-890e-4d0e366a4c2b
     m_ActionName: Player/Run[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
@@ -10008,6 +10026,37 @@ CharacterController:
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1969420631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306008385921086371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c999339742e124fa43386967103d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeldItem: {fileID: 0}
+  cr: {fileID: 5176448406791949340}
+  cameraTransform: {fileID: 0}
+  gravity: -20
+  jumpForce: 10
+  rotationSpeed: 10
+  groundCheck: {fileID: 1978414872351432465}
+  groundDistance: 0.51
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  ps: {fileID: 640757915}
+  runPs: {fileID: 6670948760863281298}
+  WallJumpCheck: {fileID: 3207145373150946969}
+  CWJ: {fileID: 1250530095}
+  _interactableManager: {fileID: 0}
+  speed: 0
+  walkSpeed: 6
+  sprintSpeed: 12
 --- !u!1 &5368155188315264977
 GameObject:
   m_ObjectHideFlags: 0
