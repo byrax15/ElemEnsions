@@ -34,9 +34,7 @@ public class PlayerInventory : MonoBehaviour
     public void ExchangeCrystal(int qnt)
     {
         if(qnt > crystals)
-        {
             GetComponent<PlayerUI>().SetExchangeWarning("Vous n'avez pas assez de cristaux pour faire cet échange.");
-        }
         else
         {
             DimensionSwitches += qnt;
