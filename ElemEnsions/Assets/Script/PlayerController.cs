@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     public float gravity = -9.8f;
+    public float jumpForce = 100.0f;
     public float rotationSpeed = 0.8f;
 
     public Transform groundCheck;
     public float groundDistance = 0.1f;
     public LayerMask groundMask;
 
-    private bool isGrounded = true;
+    private bool isGrounded = false;
+    private bool isJumping = false;
 
     private Vector3 velocity;
     private Vector3 movement;
@@ -37,10 +39,18 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = -2f;
         }
+        else if(isJumping)
+        {
+            velocity += Vector3.up * jumpForce;
+            isJumping = false;
+            isGrounded = false;
+            Debug.Log(velocity.y);
+        }
         else
         {
-            velocity.y += gravity;
+            velocity.y += gravity * Time.deltaTime;
         }
+
         Vector3 move = movement.x * cameraTransform.right.normalized + movement.z * cameraTransform.forward.normalized;
         move.y = 0.0f;
         cr.Move((velocity + move) * Time.deltaTime);
@@ -72,5 +82,16 @@ public class PlayerController : MonoBehaviour
         }
         if(context.canceled)
             movement = Vector3.zero;
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            if(isGrounded)
+            {
+                isJumping = true;
+            }
+        }
     }
 }
