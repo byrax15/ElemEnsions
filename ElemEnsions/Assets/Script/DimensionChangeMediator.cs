@@ -12,6 +12,8 @@ namespace Script
 
         private Dimension _activeDimension;
 
+        public Dimension CurrentDimension { get => _activeDimension; }
+
         private void Start()
         {
             ChangeDimension(Dimension.Base);

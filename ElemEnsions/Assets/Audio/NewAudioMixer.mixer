@@ -63,15 +63,21 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
-  - guid: a87be3fcff058004aad9dfad29afa61e
-    name: Fire
   - guid: d60762d1d3a079d4eab3201cd1c5def3
-    name: Wind
+    name: Air
+  - guid: 5f63a8c029ae47f4091973f41b948b99
+    name: Earth
+  - guid: 088eddebe1a63d64e81bcca7c1189d45
+    name: Fire
+  - guid: e34886b266ed14743ad23e12300cad40
+    name: Water
   m_AudioMixerGroupViews:
   - guids:
     - 9ba8cf2c91afeaf458407cbf12b66d1b
     - 7299cdfd33c7cf544a2a49befea36473
     - 18f6b10c8ce363f49b5162a5fa38041b
+    - f6de962378f5db34a83ed9d20dfedbc8
+    - 02554ab1c5c68624785913fb17cf3eb3
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -85,8 +91,10 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 9ba8cf2c91afeaf458407cbf12b66d1b
   m_Children:
+  - {fileID: 511760928494622259}
   - {fileID: 4645832939013996568}
   - {fileID: -5429208701611988178}
+  - {fileID: 3579540437075752089}
   m_Volume: 4034c270af5bf2a4885846b43a5b60cc
   m_Pitch: b1ee1c95ca7cdc0409fa050543d1f2ec
   m_Send: 00000000000000000000000000000000
@@ -124,41 +132,79 @@ AudioMixerSnapshotController:
     d60762d1d3a079d4eab3201cd1c5def3: -0.002441872
     088eddebe1a63d64e81bcca7c1189d45: 0
   m_TransitionOverrides: {}
---- !u!244 &716545678516736040
+--- !u!244 &215081745254670785
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: cdfacd0a0139a6447a9c6aaeb1ee7980
-  m_EffectName: Duck Volume
-  m_MixLevel: dd269cc3e5669e94aa65ded436e63159
-  m_Parameters:
-  - m_ParameterName: Threshold
-    m_GUID: dc6c992470270764fa870fa55d1fa8c0
-  - m_ParameterName: Ratio
-    m_GUID: 86020dcd13714434e87d88aa9273a216
-  - m_ParameterName: Attack Time
-    m_GUID: 7c51918225cfe9d4aaf7285b3a532ae0
-  - m_ParameterName: Release Time
-    m_GUID: a28dd602b36fb9643bef582e4fcec7db
-  - m_ParameterName: Make-up Gain
-    m_GUID: 7b26062651df1da41ab1a443277ca9da
-  - m_ParameterName: Knee
-    m_GUID: a5bc207b535eb6042905f4a3a7c0930c
-  - m_ParameterName: Sidechain Mix
-    m_GUID: 2a08874e55c916343b9a8e9e73dacbf0
+  m_EffectID: 0734e2a6589b7094d922dc831be3fc76
+  m_EffectName: Attenuation
+  m_MixLevel: 4615ad68e60ec804bafe27a38c9ce6d0
+  m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &511760928494622259
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Earth
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: f6de962378f5db34a83ed9d20dfedbc8
+  m_Children: []
+  m_Volume: 5f63a8c029ae47f4091973f41b948b99
+  m_Pitch: 91d7430e9d002ec4fb9f103742a428a2
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 215081745254670785}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &1014476016454094377
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 92ce655b69f288d4496e39e4d6e2eadb
+  m_EffectName: Attenuation
+  m_MixLevel: 689447568ae07ba438969bf3fc32b81d
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &3579540437075752089
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Water
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 02554ab1c5c68624785913fb17cf3eb3
+  m_Children: []
+  m_Volume: e34886b266ed14743ad23e12300cad40
+  m_Pitch: 44baa12c4bd86604bb838affee84d129
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 1014476016454094377}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &4645832939013996568
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wind
+  m_Name: Air
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 7299cdfd33c7cf544a2a49befea36473
   m_Children: []
@@ -167,7 +213,6 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -6936512184590625676}
-  - {fileID: 716545678516736040}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
