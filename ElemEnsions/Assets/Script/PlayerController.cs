@@ -12,24 +12,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance = 0.5f;
+    [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private ParticleSystem ps;
     [SerializeField] private Transform WallJumpCheck;
+    [SerializeField] private CheckWallJump CWJ;
 
 
     private bool isGrounded = false;
-    private bool isJumping = false;
+    private bool isJumpValid = false;
     private bool canDoubleJump = true;
     private bool isTouchingWall = false;
     private bool canWallJump = true;
+    private Transform lastWallJumped;
 
 
     private bool canUpdateDoubleJump = true; // TODO update with dimension
 
-    private Vector3 verticalVelocity;
+    private Vector3 velocity;
     private Vector3 movement;
-    private Vector3 WallJumpCheckPositionLow;
+
+    private Transform WallCollided;
 
     [SerializeField] private float speed;
 
@@ -41,41 +44,35 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canWallJump)
+        if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) && velocity.y < 0)
         {
-            isGrounded = Physics.CheckCapsule(groundCheck.position, WallJumpCheck.position, 0.51f, groundMask);
-            isTouchingWall = isGrounded;
+            CheckUpdateCanDoubleJump(true);
+            lastWallJumped = null;
         }
-        else
+        else if(canWallJump)
         {
-            if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
-                canDoubleJump = true;
+            WallCollided = CWJ.GetWall();
+            isTouchingWall = WallCollided != null;
         }
 
 
         // downward acceleration
-        if (isGrounded && verticalVelocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
+        if(isJumpValid)
         {
-            verticalVelocity.y = -2f;
+            isJumpValid = false;
         }
-        else if(isJumping)
+        else if (isGrounded || isTouchingWall && velocity.y < -2) //We only reset the velocity if we were falling and before we were grounded
         {
-            if(!isGrounded)
-                CheckUpdateCanDoubleJump(false);
-            verticalVelocity += Vector3.up * jumpForce;
-            if (verticalVelocity.magnitude > jumpForce)
-                verticalVelocity.y = jumpForce;
-            isJumping = false;
-            isGrounded = false;
+            velocity.y = -2f;
         }
         else
         {
-            verticalVelocity.y += gravity * Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
         }
 
         Vector3 move = movement.x * cameraTransform.right.normalized + movement.z * cameraTransform.forward.normalized;
         move.y = 0.0f;
-        cr.Move((verticalVelocity + move) * Time.deltaTime);
+        cr.Move((velocity + move) * Time.deltaTime);
 
         Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
@@ -85,11 +82,6 @@ public class PlayerController : MonoBehaviour
     {
         if(canUpdateDoubleJump)
             canDoubleJump = newValue;
-    }
-
-    public void CheckWallJump()
-    {
-
     }
 
     public void OnApplicationFocus(bool focus)
@@ -116,15 +108,28 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(isTouchingWall && canWallJump)
+        bool wallJump = canWallJump && isTouchingWall && !isGrounded;
+      //  isJumping = context.performed && (isGrounded || canDoubleJump || wallJump);
+        if(context.performed && (isGrounded || canDoubleJump || wallJump))
         {
-            CheckWallJump();
-        }
+            isJumpValid = true;
+            if (!isGrounded)
+                CheckUpdateCanDoubleJump(false);
+            if (wallJump)
+            {
+                if (lastWallJumped != WallCollided)
+                    lastWallJumped = WallCollided;
+                else
+                    isJumpValid = false;
+            }
 
-        isJumping = context.performed && (isGrounded || canDoubleJump);
-        if(isJumping)
-        {
-            ps.Emit(100);
+            if (isJumpValid)
+            {
+                velocity += Vector3.up * jumpForce;
+                if (velocity.magnitude > jumpForce)
+                    velocity.y = jumpForce;
+                ps.Emit(100);
+            }
         }
     }
 }

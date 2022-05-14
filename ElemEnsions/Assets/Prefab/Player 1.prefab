@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3207145373150946969}
   - component: {fileID: 6144343221598433896}
+  - component: {fileID: 4801562559650891703}
+  - component: {fileID: 3548608158966902251}
+  - component: {fileID: 1093416334}
   m_Layer: 0
   m_Name: WallJumpCheck
   m_TagString: Untagged
@@ -41,11 +44,50 @@ CapsuleCollider:
   m_GameObject: {fileID: 1453277341863141284}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.55
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &4801562559650891703
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453277341863141284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3548608158966902251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453277341863141284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d31daaf586d7e4d9525adc21b973f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallDist: 0.6
+--- !u!114 &1093416334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453277341863141284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d31daaf586d7e4d9525adc21b973f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallDist: 0.6
 --- !u!1 &1516471699174181091
 GameObject:
   m_ObjectHideFlags: 0
@@ -5040,12 +5082,13 @@ MonoBehaviour:
   jumpForce: 10
   rotationSpeed: 10
   groundCheck: {fileID: 1978414872351432465}
-  groundDistance: 0.1
+  groundDistance: 0.51
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   ps: {fileID: 640757915}
   WallJumpCheck: {fileID: 3207145373150946969}
+  CWJ: {fileID: 1093416334}
   speed: 10
 --- !u!114 &8800425573914682001
 MonoBehaviour:
@@ -5281,6 +5324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1978414872351432465}
+  - component: {fileID: 6526835569718268898}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -5296,10 +5340,23 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6649959047977652122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.51, z: 0}
+  m_LocalPosition: {x: 0, y: -0.617, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3997375552153303341}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6526835569718268898
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6649959047977652122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0, z: 0}
