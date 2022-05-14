@@ -5167,7 +5167,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+      maxColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0.4745098}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9783,6 +9783,7 @@ Transform:
   - {fileID: 1978414872351432465}
   - {fileID: 3207145373150946969}
   - {fileID: 8914822817800526918}
+  - {fileID: 1099404022767596654}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9972,19 +9973,67 @@ MonoBehaviour:
     m_ActionId: da6cc691-7de2-4c01-a02d-3f57a96db368
     m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
+        m_MethodName: DebugChangeDimension
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0b37e862-2db4-43bc-8b1e-c68dff31cfc1
     m_ActionName: Player/SwapFire[/Keyboard/1]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
+        m_MethodName: DebugChangeDimension
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 970b8646-b577-4e77-ad2f-e0a714a6c5e1
     m_ActionName: Player/SwapWater[/Keyboard/2]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
+        m_MethodName: DebugChangeDimension
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4ea6304e-ed15-4c73-91e2-dd91ecf077b2
     m_ActionName: Player/SwapEarth[/Keyboard/3]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Script.DimensionChangeMediator, Assembly-CSharp
+        m_MethodName: DebugChangeDimension
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 729e3de6-037a-4669-ac83-db3269eb82ca
     m_ActionName: Player/SwapAir[/Keyboard/4]
   - m_PersistentCalls:
@@ -10054,7 +10103,6 @@ MonoBehaviour:
   WallJumpCheck: {fileID: 3207145373150946969}
   CWJ: {fileID: 1250530095}
   _interactableManager: {fileID: 0}
-  speed: 0
   walkSpeed: 6
   sprintSpeed: 12
 --- !u!1 &5368155188315264977
@@ -10154,6 +10202,51 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6060477805768122692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099404022767596654}
+  - component: {fileID: 4398533687515690533}
+  m_Layer: 7
+  m_Name: DimensionSubscriber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099404022767596654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060477805768122692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3997375552153303341}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4398533687515690533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060477805768122692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5f8b5398eca784ca8576418cf231b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mediator: {fileID: 0}
 --- !u!1 &6649959047977652122
 GameObject:
   m_ObjectHideFlags: 0
