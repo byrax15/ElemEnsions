@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3822839220053449748}
   - component: {fileID: 1615461832608314977}
   - component: {fileID: -145518726857660662}
+  - component: {fileID: -743126676769583560}
   m_Layer: 0
   m_Name: Piquants
   m_TagString: Untagged
@@ -60,6 +61,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensionChangeSource: {fileID: 0}
+--- !u!65 &-743126676769583560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772132137328256932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4808991268881331830
 PrefabInstance:
   m_ObjectHideFlags: 0
