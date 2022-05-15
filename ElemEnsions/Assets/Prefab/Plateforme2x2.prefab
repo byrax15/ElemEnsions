@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 12714074658973154}
   - component: {fileID: 9210864071484297948}
   - component: {fileID: 1497688225420099570}
+  - component: {fileID: -7417917642085094920}
   m_Layer: 0
   m_Name: Plateforme2x2
   m_TagString: Untagged
@@ -60,6 +61,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensionChangeSource: {fileID: 0}
+--- !u!65 &-7417917642085094920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821620847260368728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.25, z: 2}
+  m_Center: {x: 0, y: 0.125, z: 0}
 --- !u!1001 &4925019279625467466
 PrefabInstance:
   m_ObjectHideFlags: 0

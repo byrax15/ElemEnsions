@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3822839220053449748}
-  - component: {fileID: 1615461832608314977}
-  - component: {fileID: -145518726857660662}
+  - component: {fileID: -743126676769583560}
+  - component: {fileID: 4977793039747262675}
   m_Layer: 0
   m_Name: Piquants
   m_TagString: Untagged
@@ -34,7 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1615461832608314977
+--- !u!65 &-743126676769583560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772132137328256932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.5, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &4977793039747262675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,23 +56,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1772132137328256932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3445399ff440d9046b3053891282342b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a0a6523065e32a4caceb4ce4d1986f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affinity: 00000000
---- !u!114 &-145518726857660662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772132137328256932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75e49758951c6a4e8faf5e41ede824d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dimensionChangeSource: {fileID: 0}
 --- !u!1001 &4808991268881331830
 PrefabInstance:
   m_ObjectHideFlags: 0

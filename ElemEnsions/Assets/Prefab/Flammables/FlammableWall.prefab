@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5156218357048804625}
   - component: {fileID: 5156218357048804624}
   - component: {fileID: 5156218357048804627}
-  - component: {fileID: 1996359468421796686}
   - component: {fileID: 9126551192206772327}
   m_Layer: 0
   m_Name: FlammableWall
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5156218357048804626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 1, z: 2}
+  m_LocalScale: {x: 0.2, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,24 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1996359468421796686
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5156218357048804626}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!114 &9126551192206772327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,5 +114,3 @@ MonoBehaviour:
   CanInteractMultipleTime: 0
   _playerController: {fileID: 0}
   _burningDuration: 3
-  audioSource: {fileID: 0}
-  burnAudio: {fileID: 8300000, guid: 0e6aa9d5cfd35b74bb5d2d0c0620c1f6, type: 3}

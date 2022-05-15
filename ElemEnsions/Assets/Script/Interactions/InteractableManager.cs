@@ -17,7 +17,7 @@ public class InteractableManager : MonoBehaviour
 
     public bool MenuOn { get; set; }
 
-    private const float SHOW_PROXIMITY_INDICATOR_DISTANCE = 5.0f;
+    private const float SHOW_PROXIMITY_INDICATOR_DISTANCE = 8.0f;
     private const float SHOW_INTERACTION_INDICATOR_DISTANCE = 1.5f;
     private const int CLOSE_INDEX = 0;
     private const int FAR_INDEX = 1;
@@ -66,8 +66,10 @@ public class InteractableManager : MonoBehaviour
                 return;
             }
 
-            if (_playerController.HeldItem == key)
+            if (_playerController.HeldItem == key || !key.activeSelf)
             {
+                values[CLOSE_INDEX].SetActive(false);
+                values[FAR_INDEX].SetActive(false);
                 continue;
             }
             

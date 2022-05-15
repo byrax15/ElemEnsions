@@ -51,7 +51,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (crystals < PORTALS_PACK)
         {
-            GetComponent<PlayerUI>().SetExchangeWarning("Vous n'avez pas assez de cristaux pour faire un échange.");
+            GetComponent<PlayerUI>().SetExchangeWarning("Nombre de cristaux insuffisant, achat impossible.");
             GetComponent<PlayerUI>().UpdateExchangeValues(exchangeCrystal, exchangePortal);
 
             return false;

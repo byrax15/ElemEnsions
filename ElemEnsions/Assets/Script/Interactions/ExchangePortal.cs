@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExchangePortal : Interactable
 {
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip portalSound;
     private MenuManager menuManager;
 
     void Start() 
@@ -13,6 +13,8 @@ public class ExchangePortal : Interactable
 
     public override bool Interact()
     {
+        source.PlayOneShot(portalSound);
+        
         menuManager.OpenExchangeUI();
 
         return true;

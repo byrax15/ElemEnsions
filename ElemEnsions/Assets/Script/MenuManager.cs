@@ -18,8 +18,10 @@ public class MenuManager : MonoBehaviour
     private bool canPause = false;
 
 
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip buySound;
     [SerializeField] private GameObject quitExchangeBtn;
-    [SerializeField ]private GameObject exchangeBtn;
+    [SerializeField] private GameObject exchangeBtn;
 
 
 
@@ -152,6 +154,8 @@ public class MenuManager : MonoBehaviour
 
     public void ExchangeCrystals()
     {
+        source.PlayOneShot(buySound, 0.4f);
+        
         player.GetComponent<PlayerInventory>().ConfirmExchange();
         ToogleExchangeUI(false);
     }
@@ -175,7 +179,7 @@ public class MenuManager : MonoBehaviour
         {
             gameOver.SetActive(true);
             yield return new WaitForSeconds(showForSeconds);
-            PauseGame();
+            RestartGame();
         }
     }
 }
