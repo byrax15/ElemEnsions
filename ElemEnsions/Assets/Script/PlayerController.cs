@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform WallJumpCheck;
     [SerializeField] private CheckWallJump CWJ;
     [SerializeField] private InteractableManager _interactableManager;
+
+    private AnimationStateController ASC;
     
     private bool isGrounded;
     private bool canDoubleJump = false;
@@ -59,13 +61,17 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        ASC = GetComponent<AnimationStateController>();
         speed = walkSpeed;
     }
 
     private void Update()
     {
+        bool lastIsGrounded = isGrounded;
         if (isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) && velocity.y < 0) //pls keep it that way else the jump break
         {
+            if (lastIsGrounded != isGrounded)
+                ASC.OnLand();
             CheckUpdateCanDoubleJump(true);
             lastWallJumped = null;
         }
@@ -92,6 +98,11 @@ public class PlayerController : MonoBehaviour
         Vector3 move = movement.x * cameraTransform.right.normalized + movement.z * cameraTransform.forward.normalized;
         move.y = 0.0f;
         cr.Move((velocity + speed * move) * Time.deltaTime);
+
+        if(velocity.y < 0 && !isGrounded)
+        {
+            ASC.OnFall();
+        }
 
         Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
@@ -120,9 +131,13 @@ public class PlayerController : MonoBehaviour
             Vector2 input = context.ReadValue<Vector2>();
         
             movement = new Vector3(input.x, 0.0f, input.y).normalized;
+            ASC.OnMove();
         }
         if(context.canceled)
+        {
             movement = Vector3.zero;
+            ASC.OnStop();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -158,6 +173,7 @@ public class PlayerController : MonoBehaviour
                 velocity += Vector3.up * jumpForce;
                 if (velocity.y > jumpForce)
                     velocity.y = jumpForce;
+                ASC.OnJump();
                 ps.Emit(100);
             }
         }
