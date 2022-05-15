@@ -19,7 +19,8 @@ TagManager:
   - MenuManager
   - ExchangeUI
   - InteractableManager
-  - WinMenu
+  - Interactable
+  - CreditsPage
   layers:
   - Default
   - TransparentFX
