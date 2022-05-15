@@ -23,7 +23,6 @@ namespace Script.Interactions
 
         private IEnumerator MoveCover()
         {
-            Debug.Log("YOU WON");
             if (_cover)
             {
                 var destination = Quaternion.Euler(90, 0, 0);
@@ -33,7 +32,8 @@ namespace Script.Interactions
                     yield return new WaitForFixedUpdate();
                 }
             }
-
+            
+            GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>().GameOver(3);
         }
     }
 }
