@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InteractableManager _interactableManager;
 
     private AnimationStateController ASC;
+    private PlayerRespawn pR;
     
     private bool isGrounded;
     private bool canDoubleJump = false;
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
     {
         ASC = GetComponent<AnimationStateController>();
         speed = walkSpeed;
+        pR = GetComponent<PlayerRespawn>();
+        pR.SetRespawnPoint(transform.position);        
     }
 
     private void Update()
