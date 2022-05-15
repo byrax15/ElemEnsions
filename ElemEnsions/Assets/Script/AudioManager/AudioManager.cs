@@ -9,16 +9,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioMixer mixer = null;
 
     [SerializeField] private DimensionChangeMediator mediator;
-    private Dimension current;
 
-    public int count;
+    [SerializeField] private float maxMusicVolume = 0.8f;
 
-    public void SwitchDimension(Dimension oldDim, Dimension newDim)
-    {
-        current = newDim;
-        StartCoroutine(FadeMixerGroup.EndFade(mixer, oldDim.ToString(), 10.0f));
-        StartCoroutine(FadeMixerGroup.StartFade(mixer, newDim.ToString(), 10.0f, 1f));
-    }
+    private int count = 1;
+
+
 
     private void Start()
     {
@@ -27,23 +23,31 @@ public class AudioManager : MonoBehaviour
         {
             if (dim == mediator.CurrentDimension)
             {
-                mixer.SetVolume(dim.ToString(), 1.0f);
+                mixer.SetVolume(dim.ToString(), maxMusicVolume);
                 continue;
             }
 
             mixer.SetVolume(dim.ToString(), 0.0f);
         }
+
         mediator.AddListener(SwitchDimension);
     }
 
+    public void SwitchDimension(Dimension oldDim, Dimension newDim)
+    {
+        Debug.Log(oldDim.ToString());
+        StartCoroutine(FadeMixerGroup.EndFade(mixer, oldDim.ToString(), 5.0f));
+        StartCoroutine(FadeMixerGroup.StartFade(mixer, newDim.ToString(), 5.0f, maxMusicVolume));
+    }
+
+    // TODO: remove fct after universe swaping
     public void TestForceChangeDimension(InputAction.CallbackContext ctx)
     {
         if (ctx.performed) 
         {
-            Dimension d = ((Dimension[])Enum.GetValues(typeof(Dimension)))[count++ % 6];  
+            Dimension d = ((Dimension[])Enum.GetValues(typeof(Dimension)))[count++ % 5];  
             
             mediator.ChangeDimension(d);
         }
-        
     }
 }
