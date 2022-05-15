@@ -143,7 +143,9 @@ public class MenuManager : MonoBehaviour
         exchangeBtn.SetActive(player.GetComponent<PlayerInventory>().PrepareExchange());
     }
 
-    public void ToogleExchangeUI(bool activate)
+    public void CloseExchangeUI() => ToogleExchangeUI(false);
+
+    private void ToogleExchangeUI(bool activate)
     {
         exchangeUI.SetActive(activate);
         UIOn = activate;

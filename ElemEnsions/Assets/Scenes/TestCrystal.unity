@@ -130,22 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1266189219, guid: 82ddd4b840e93624d886510ec20df8ab, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1266189220, guid: 82ddd4b840e93624d886510ec20df8ab, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 269.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2130618192, guid: 82ddd4b840e93624d886510ec20df8ab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2130618193, guid: 82ddd4b840e93624d886510ec20df8ab, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -280.25
-      objectReference: {fileID: 0}
     - target: {fileID: 7177765338933239002, guid: 82ddd4b840e93624d886510ec20df8ab, type: 3}
       propertyPath: m_Name
       value: Menus
