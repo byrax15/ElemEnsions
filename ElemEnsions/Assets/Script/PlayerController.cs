@@ -100,6 +100,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = movement.x * cameraTransform.right.normalized + movement.z * cameraTransform.forward.normalized;
         move.y = 0.0f;
+        if (move.magnitude > 0.0f)
+            ASC.OnMove();
         cr.Move((velocity + speed * move) * Time.deltaTime);
 
         if(velocity.y < 0 && !isGrounded)
