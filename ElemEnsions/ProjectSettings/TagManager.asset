@@ -7,6 +7,18 @@ TagManager:
   - Wall
   - Crystal
   - CrystalUI
+  - MainMenu
+  - GameUI
+  - GameOverUI
+  - PauseMenu
+  - ExchangePortal
+  - SwitchesUI
+  - ExchangeWarning
+  - PortalNumber
+  - CrystalNumber
+  - MenuManager
+  - ExchangeUI
+  - InteractableManager
   layers:
   - Default
   - TransparentFX
