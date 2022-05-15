@@ -12,10 +12,13 @@ namespace Script
 
         private Dimension _activeDimension;
 
+        public Dimension CurrentDimension { get => _activeDimension; }
+
         private void Start()
         {
             ChangeDimension(Dimension.Base);
         }
+        
 
         public void ChangeDimension(Dimension newDimension)
         {
@@ -33,10 +36,7 @@ namespace Script
                 if (!callback.action.name.TryGetContainedDimension(out var dimension))
                     return;
 
-                ChangeDimension(dimension == _activeDimension
-                    ? Dimension.Base
-                    : dimension
-                );
+                ChangeDimension(dimension);
             }
         }
 
