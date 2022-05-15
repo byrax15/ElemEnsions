@@ -59,4 +59,10 @@ public class PlayerInventory : MonoBehaviour
         DimensionSwitches += exchangePortal;
         Crystals -= exchangeCrystal;
     }
+
+    public void UseDimensionSwitch()
+    {
+        if(DimensionSwitches > 0)
+            DimensionSwitches--;
+    }
 }
