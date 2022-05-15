@@ -55,7 +55,7 @@ public class MenuManager : MonoBehaviour
         gameOver.SetActive(false);
         pauseMenu.SetActive(false);
         creditsPage.SetActive(false);
-
+        
         Cursor.lockState = CursorLockMode.Confined;
     }
 

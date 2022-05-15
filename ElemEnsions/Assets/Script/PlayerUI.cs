@@ -26,14 +26,13 @@ public class PlayerUI : MonoBehaviour
 
     public void UpdateExchangeValues(int crystals, int portals)
     {
-        crystalNumberTxt.SetText(crystals.ToString() + " X ");
-        portalNumberTxt.SetText(portals.ToString() + " X ");
+        crystalNumberTxt.SetText(crystals.ToString());
+        portalNumberTxt.SetText(portals.ToString());
     }
 
     public void SetExchangeWarning(string message) 
     {
         exchangeWarningTxt.SetText(message);
-        StartCoroutine(DeactivateWarning(5f));
     }
 
     IEnumerator DeactivateWarning(float waitTime) 
