@@ -98,8 +98,6 @@ public class PlayerController : MonoBehaviour
         }
 
         HandleRotation(move.x, move.z);
-       // Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
-       // transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
 
     public void CheckUpdateCanDoubleJump(bool newValue)
