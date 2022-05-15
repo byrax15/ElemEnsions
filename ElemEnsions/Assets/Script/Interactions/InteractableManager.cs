@@ -53,6 +53,7 @@ public class InteractableManager : MonoBehaviour
     {
         _currentInteractable = null;
         
+        
         foreach ((GameObject key, GameObject[] values) in _indicatorsByInteractables)
         {
             if (_playerController.HeldItem == key)

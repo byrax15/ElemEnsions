@@ -34,22 +34,26 @@ public class PlayerInventory : MonoBehaviour
     }
 
 
-    public void PrepareExchange()
+    public bool PrepareExchange()
     {
         int portalsValue = 0;
         exchangeCrystal = 0;
 
         if(crystals < PORTALS_PACK)
-            GetComponent<PlayerUI>().SetExchangeWarning("Vous n'avez pas assez de cristaux pour faire un échange.");
-        else
         {
-            exchangePortal = Crystals / PORTALS_PACK;
-            exchangeCrystal = portalsValue / PORTALS_PACK;
-
+            GetComponent<PlayerUI>().SetExchangeWarning("Vous n'avez pas assez de cristaux pour faire un échange.");
             GetComponent<PlayerUI>().UpdateExchangeValues(exchangeCrystal, exchangePortal);
-            
+
+            return false;
         }
+            
+        exchangePortal = Crystals / PORTALS_PACK;
+        exchangeCrystal = portalsValue / PORTALS_PACK;
+        Debug.Log("portal " + exchangePortal);
+        Debug.Log("crystal " + exchangeCrystal);
+
         GetComponent<PlayerUI>().UpdateExchangeValues(exchangeCrystal, exchangePortal);
+        return true;
     }
 
     public void ConfirmExchange()

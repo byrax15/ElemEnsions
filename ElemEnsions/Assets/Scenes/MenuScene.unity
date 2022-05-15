@@ -271,7 +271,7 @@ Terrain:
   m_DrawTreesAndFoliage: 1
   m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -351,7 +351,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c999339742e124fa43386967103d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeldItem: {fileID: 0}
   cr: {fileID: 1565174405}
   cameraTransform: {fileID: 1627456937}
   gravity: -9.8
@@ -448,6 +449,13 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+  ps: {fileID: 0}
+  runPs: {fileID: 0}
+  WallJumpCheck: {fileID: 0}
+  CWJ: {fileID: 0}
+  _interactableManager: {fileID: 0}
+  walkSpeed: 0
+  sprintSpeed: 0
 --- !u!1 &1627456934
 GameObject:
   m_ObjectHideFlags: 0

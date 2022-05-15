@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,10 @@ public class MenuManager : MonoBehaviour
     private GameObject pauseMenu;
     private GameObject exchangeUI;
     private PlayerInventory inventory;
+
+
+    [SerializeField] private GameObject quitExchangeBtn;
+    [SerializeField ]private GameObject exchangeBtn;
 
     private bool canPause = false;
 
@@ -60,6 +65,8 @@ public class MenuManager : MonoBehaviour
     {
         canPause = mode;
         gameUI.SetActive(mode);
+        // enlever rendering des icones
+        // looper sur _indicatorsByInteractables pour disable tous les indicators
     }
 
     public void ContinueGame() 
@@ -96,8 +103,22 @@ public class MenuManager : MonoBehaviour
     public void OpenExchangeUI()
     {
         exchangeUI.SetActive(true);
-        inventory.PrepareExchange();
+        bool canExchange = inventory.PrepareExchange();
+        exchangeBtn.SetActive(canExchange);
+        quitExchangeBtn.SetActive(!canExchange);
+        // if(inventory.PrepareExchange())
+        //     exchangeBtn.enabled = true;
+        // else
+        //     quitExchangeBtn.enabled = true;
+
     }
+
+    public void CloseExchangeUI()
+    {
+        exchangeUI.SetActive(false);
+    }
+
+
 
     public void ExchangeCrystals()
     {
