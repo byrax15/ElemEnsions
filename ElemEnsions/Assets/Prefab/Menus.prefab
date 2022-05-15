@@ -2219,7 +2219,7 @@ GameObject:
   - component: {fileID: 7643875535121332307}
   m_Layer: 5
   m_Name: DimensionSwitches
-  m_TagString: SwitchesUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4507,7 +4507,7 @@ GameObject:
   - component: {fileID: 5922732799546766160}
   m_Layer: 5
   m_Name: Number
-  m_TagString: CrystalUI
+  m_TagString: SwitchesUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

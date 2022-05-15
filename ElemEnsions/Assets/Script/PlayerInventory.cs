@@ -29,6 +29,7 @@ public class PlayerInventory : MonoBehaviour
         set
         {
             dimensionSwitches = value;
+            Debug.Log("Switches " + value);
             GetComponent<PlayerUI>().UpdateDimensinSwitchesCount(dimensionSwitches);
         }
     }
@@ -36,7 +37,7 @@ public class PlayerInventory : MonoBehaviour
 
     public bool PrepareExchange()
     {
-        int portalsValue = 0;
+        exchangePortal = 0;
         exchangeCrystal = 0;
 
         if(crystals < PORTALS_PACK)
@@ -48,9 +49,8 @@ public class PlayerInventory : MonoBehaviour
         }
             
         exchangePortal = Crystals / PORTALS_PACK;
-        exchangeCrystal = portalsValue / PORTALS_PACK;
-        Debug.Log("portal " + exchangePortal);
-        Debug.Log("crystal " + exchangeCrystal);
+        exchangeCrystal = exchangePortal * PORTALS_PACK;
+        
 
         GetComponent<PlayerUI>().UpdateExchangeValues(exchangeCrystal, exchangePortal);
         return true;
@@ -58,6 +58,8 @@ public class PlayerInventory : MonoBehaviour
 
     public void ConfirmExchange()
     {
+        Debug.Log("portal " + exchangePortal);
+        Debug.Log("crystal " + exchangeCrystal);
         DimensionSwitches += exchangePortal;
         Crystals -= exchangeCrystal;
     }
