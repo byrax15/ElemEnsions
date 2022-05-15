@@ -22,11 +22,7 @@ public class PlayerUI : MonoBehaviour
     }
 
     public void UpdateCrystalsCount(int count) => crystalTxt.SetText(count.ToString());
-    public void UpdateDimensinSwitchesCount(int count) 
-    {
-        Debug.Log("Update dimension switches " + count.ToString());
-        switchesTxt.SetText(count.ToString());
-    } 
+    public void UpdateDimensinSwitchesCount(int count) => switchesTxt.SetText(count.ToString());
 
     public void UpdateExchangeValues(int crystals, int portals)
     {

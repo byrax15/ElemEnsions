@@ -106,11 +106,6 @@ public class MenuManager : MonoBehaviour
         bool canExchange = inventory.PrepareExchange();
         exchangeBtn.SetActive(canExchange);
         quitExchangeBtn.SetActive(!canExchange);
-        // if(inventory.PrepareExchange())
-        //     exchangeBtn.enabled = true;
-        // else
-        //     quitExchangeBtn.enabled = true;
-
     }
 
     public void CloseExchangeUI()
