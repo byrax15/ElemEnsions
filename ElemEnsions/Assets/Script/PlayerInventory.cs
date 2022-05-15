@@ -81,8 +81,8 @@ public class PlayerInventory : MonoBehaviour
             if (!callback.action.name.TryGetContainedDimension(out var dimension))
                 return;
 
-            DimensionSwitches--;
-            _dimensionMediator.ChangeDimension(dimension);
+            if (_dimensionMediator.TryChangeDimension(dimension))
+                DimensionSwitches--;
         }
     } 
 }
