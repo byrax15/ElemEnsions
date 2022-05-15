@@ -5095,6 +5095,7 @@ GameObject:
   - component: {fileID: 3361706642846937764}
   - component: {fileID: 5558809255878138172}
   - component: {fileID: 8596245225108148652}
+  - component: {fileID: 5887192901646307563}
   m_Layer: 8
   m_Name: PortalAir
   m_TagString: Interactable
@@ -5160,6 +5161,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0495846, y: 2.4966502, z: 2.6204624}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5887192901646307563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778518387219729392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6a6cb6ec0748b5a8cb89d56f97b2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionIndicatorPrefab: {fileID: 1053748070479058314, guid: decf778ea1f5eab4590d0e14716c968b, type: 3}
+  CanInteractMultipleTime: 1
 --- !u!1 &5778518387331138414
 GameObject:
   m_ObjectHideFlags: 0

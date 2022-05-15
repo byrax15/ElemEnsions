@@ -7,7 +7,7 @@ namespace Script
 {
     [RequireComponent(typeof(DimensionAffinity))]
     [ExecuteAlways]
-    public class DimensionChanger : MonoBehaviour
+    public class DimensionVfx : MonoBehaviour
     {
         [SerializeField] private DimensionChangeMediator dimensionMediator;
         
@@ -19,13 +19,7 @@ namespace Script
         {
             StartVfx();
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player")) 
-                dimensionMediator.ChangeDimension(_affinity.FirstNotBaseOrDefault);
-        }
-
+        
         private void StartVfx()
         {
             _affinity = GetComponent<DimensionAffinity>();
