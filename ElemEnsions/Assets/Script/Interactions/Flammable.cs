@@ -19,6 +19,8 @@ public class Flammable : Interactable
     {
         if (_playerController.HeldItem != null && _playerController.HeldItem.CompareTag(TORCH_TAG))
         {
+            Destroy(_playerController.HeldItem);
+            _playerController.HeldItem = null;
             StartCoroutine(PlayBurnEffect());
             return true;
         }

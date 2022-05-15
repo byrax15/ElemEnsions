@@ -55,6 +55,12 @@ public class InteractableManager : MonoBehaviour
         
         foreach ((GameObject key, GameObject[] values) in _indicatorsByInteractables)
         {
+            if(key == null)
+            {
+                _indicatorsByInteractables.Remove(key);
+                return;
+            }
+
             if (_playerController.HeldItem == key)
             {
                 continue;
