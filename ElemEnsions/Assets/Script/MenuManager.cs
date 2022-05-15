@@ -167,4 +167,15 @@ public class MenuManager : MonoBehaviour
         creditsPage.SetActive(false);
         mainMenu.SetActive(true);
     }
+    
+    public void GameOver(float showForSeconds)
+    {
+        StartCoroutine(ShowFor(showForSeconds));
+        IEnumerator ShowFor(float showForSeconds)
+        {
+            gameOver.SetActive(true);
+            yield return new WaitForSeconds(showForSeconds);
+            PauseGame();
+        }
+    }
 }
