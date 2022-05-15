@@ -1373,10 +1373,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1935730341, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: mediator
+      value: 
+      objectReference: {fileID: 1197327810}
     - target: {fileID: 1969420631, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 851194031}
+    - target: {fileID: 536583095077717197, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453098650517104098, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3997375552153303341, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1426,6 +1438,10 @@ PrefabInstance:
       value: Player_1
       objectReference: {fileID: 0}
     - target: {fileID: 4398533687515690533, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: mediator
+      value: 
+      objectReference: {fileID: 1197327810}
+    - target: {fileID: 5945261264592935078, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
       propertyPath: mediator
       value: 
       objectReference: {fileID: 1197327810}
