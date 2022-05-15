@@ -12,14 +12,31 @@ public class MenuManager : MonoBehaviour
     private GameObject pauseMenu;
     private GameObject exchangeUI;
     private PlayerInventory inventory;
-
     private PlayerController playerController;
+    private InteractableManager interactableManager;
+    private bool isOnUI = false;
+    private bool canPause = false;
+
 
     [SerializeField] private GameObject quitExchangeBtn;
     [SerializeField ]private GameObject exchangeBtn;
 
-    private bool UIOn = false;
-    private bool canPause = false;
+
+
+    public bool UIOn 
+    {
+        get => isOnUI;
+
+        private set 
+        {
+            isOnUI = value;
+            interactableManager.MenuOn = value;
+            
+            if(isOnUI)
+                interactableManager.DisableAllIndicators();
+                
+        }
+    }
 
     void Start() 
     {
@@ -28,6 +45,7 @@ public class MenuManager : MonoBehaviour
         gameOver = GameObject.FindGameObjectWithTag("GameOverUI");
         pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         exchangeUI = GameObject.FindGameObjectWithTag("ExchangeUI");
+        interactableManager = GameObject.FindGameObjectWithTag("InteractableManager").GetComponent<InteractableManager>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
@@ -59,10 +77,9 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        mainMenu.SetActive(false);
         ToogleGameUI(true);
+        mainMenu.SetActive(false);
         gameOver.SetActive(false);
-        Time.timeScale = 1;
     }
 
     public void PauseGame()
@@ -78,8 +95,6 @@ public class MenuManager : MonoBehaviour
         gameUI.SetActive(mode);
         StopGame(!mode);
         UIOn = !mode;
-        // enlever rendering des icones
-        // looper sur _indicatorsByInteractables pour disable tous les indicators
     }
 
     public void ContinueGame() 
@@ -121,24 +136,19 @@ public class MenuManager : MonoBehaviour
 
     public void OpenExchangeUI()
     {
-        exchangeUI.SetActive(true);
-        bool canExchange = inventory.PrepareExchange();
-        exchangeBtn.SetActive(canExchange);
-        UIOn = true;
+        ToogleExchangeUI(true);
+        exchangeBtn.SetActive(inventory.PrepareExchange());
     }
 
-    public void CloseExchangeUI()
+    public void ToogleExchangeUI(bool activate)
     {
-        exchangeUI.SetActive(false);
-        UIOn = false;
+        exchangeUI.SetActive(activate);
+        UIOn = activate;
     }
-
-
 
     public void ExchangeCrystals()
     {
         inventory.ConfirmExchange();
-        exchangeUI.SetActive(false);
-        UIOn = false;
+        ToogleExchangeUI(false);
     }
 }

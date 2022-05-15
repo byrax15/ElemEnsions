@@ -15,6 +15,8 @@ public class InteractableManager : MonoBehaviour
     //KEY: Interactable object, VALUE: Array of 2 indicators (close and far)
     private Dictionary<GameObject, GameObject[]> _indicatorsByInteractables;
 
+    public bool MenuOn { get; set; }
+
     private const float SHOW_PROXIMITY_INDICATOR_DISTANCE = 5.0f;
     private const float SHOW_INTERACTION_INDICATOR_DISTANCE = 1.5f;
     private const int CLOSE_INDEX = 0;
@@ -52,6 +54,8 @@ public class InteractableManager : MonoBehaviour
     private void UpdateIndicators()
     {
         _currentInteractable = null;
+
+        if(MenuOn) return;
         
         
         foreach ((GameObject key, GameObject[] values) in _indicatorsByInteractables)
@@ -102,6 +106,17 @@ public class InteractableManager : MonoBehaviour
 
             if (!_currentInteractable.GetComponent<Interactable>().CanInteractMultipleTime)
                 _indicatorsByInteractables.Remove(_currentInteractable);
+        }
+    }
+
+    public void DisableAllIndicators()
+    {
+        foreach ((GameObject key, GameObject[] values) in _indicatorsByInteractables)
+        {
+            foreach (GameObject indicator in values)
+            {
+                indicator.SetActive(false);
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ TagManager:
   - CrystalNumber
   - MenuManager
   - ExchangeUI
+  - InteractableManager
   layers:
   - Default
   - TransparentFX
