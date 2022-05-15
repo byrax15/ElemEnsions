@@ -13,7 +13,7 @@ public class ExchangePortal : Interactable
 
     public override bool Interact()
     {
-        menuManager.ExchangeCrystals();
+        menuManager.OpenExchangeUI();
 
         return true;
     }
