@@ -3,6 +3,11 @@ using UnityEngine;
 public class AnimationStateController : MonoBehaviour
 {
     [SerializeField] private AudioClip[] jumpClips;
+    [SerializeField] private AudioClip[] stepBaseClips;
+    [SerializeField] private AudioClip[] stepFireClips;
+    [SerializeField] private AudioClip[] stepEarthClips;
+    [SerializeField] private AudioClip[] stepAirClips;
+    [SerializeField] private AudioClip[] stepWaterClips;
     [SerializeField] private AudioSource audioSource;
     public Animator animator;
     private bool isRunning;
@@ -13,9 +18,6 @@ public class AnimationStateController : MonoBehaviour
     private int onLandHash;
     private bool isSprinting;
     private int isSprintingHash;
-
-
-
 
     private void Start()
     {
