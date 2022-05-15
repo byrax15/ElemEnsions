@@ -45,20 +45,8 @@ public class PlayerController : MonoBehaviour
     private float speed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float sprintSpeed;
-    
-    private int crystals = 0;
+
     private bool isJumpValid;
-
-    public int Crystals
-    {
-        get => crystals;
-
-        set
-        {
-            crystals = value;
-            GetComponent<PlayerUI>().UpdateCrystalsCount(crystals);
-        }
-    }
 
     private void Start()
     {
@@ -109,8 +97,7 @@ public class PlayerController : MonoBehaviour
             ASC.OnFall();
         }
 
-        Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        HandleRotation(move.x, move.z);
     }
 
     public void CheckUpdateCanDoubleJump(bool newValue)
@@ -191,10 +178,12 @@ public class PlayerController : MonoBehaviour
             if (context.performed)
             {
                 speed = sprintSpeed;
+                ASC.OnSprint();
                 runPs.Play();
             }
-            else
+            else if(context.canceled)
             {
+                ASC.OnSprintStop();
                 StopRun();
             }
         }
@@ -215,6 +204,7 @@ public class PlayerController : MonoBehaviour
     }
     public void StopRun()
     {
+        ASC.OnSprintStop();
         speed = walkSpeed;
         runPs.Stop();
     }
@@ -232,5 +222,15 @@ public class PlayerController : MonoBehaviour
         if (newDimension != Dimension.Fire)
             StopRun();
 
+    }
+    private void HandleRotation(float x, float z)
+    {
+        if (x == 0 && z == 0) return;
+
+        Vector3 movementDirection = new(x, 0, z);
+        movementDirection.Normalize();
+
+        Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
 }

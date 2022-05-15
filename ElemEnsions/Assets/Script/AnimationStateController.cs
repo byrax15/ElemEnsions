@@ -9,6 +9,10 @@ public class AnimationStateController : MonoBehaviour
     private bool onGround = true;
     private int onJumpHash;
     private int onLandHash;
+    private bool isSprinting;
+    private int isSprintingHash;
+
+
 
     private void Start()
     {
@@ -16,6 +20,8 @@ public class AnimationStateController : MonoBehaviour
         onJumpHash = Animator.StringToHash("onJump");
         onFallHash = Animator.StringToHash("onFall");
         onLandHash = Animator.StringToHash("onLand");
+        isSprintingHash = Animator.StringToHash("isSprinting");
+
     }
 
     private void Update()
@@ -56,5 +62,17 @@ public class AnimationStateController : MonoBehaviour
         onGround = false;
         animator.SetTrigger(onJumpHash);
         animator.SetBool(onFallHash, true);
+    }
+
+    public void OnSprint()
+    {
+        if (onGround)
+            if (!isSprinting)
+                animator.SetBool(isSprintingHash, true);
+    }
+
+    public void OnSprintStop()
+    {
+        animator.SetBool(isSprintingHash, false);
     }
 }
