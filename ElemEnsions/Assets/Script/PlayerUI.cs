@@ -13,8 +13,8 @@ public class PlayerUI : MonoBehaviour
     void Awake()
     {
         crystalTxt = GameObject.FindGameObjectWithTag("CrystalUI").GetComponent<TextMeshProUGUI>();
-        // switchesTxt = GameObject.FindGameObjectWithTag("SwitchesUI").GetComponent<TextMeshProUGUI>();
-        // exchangeWarningTxt = GameObject.FindGameObjectWithTag("ExchangeWarning").GetComponent<TextMeshProUGUI>();
+        switchesTxt = GameObject.FindGameObjectWithTag("SwitchesUI").GetComponent<TextMeshProUGUI>();
+        exchangeWarningTxt = GameObject.FindGameObjectWithTag("ExchangeWarning").GetComponent<TextMeshProUGUI>();
     }
 
     public void UpdateCrystalsCount(int count) => crystalTxt.SetText(count.ToString());

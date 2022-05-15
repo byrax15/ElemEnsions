@@ -13,6 +13,7 @@ TagManager:
   - PauseMenu
   - ExchangePortal
   - SwitchesUI
+  - ExchangeWarning
   layers:
   - Default
   - TransparentFX
