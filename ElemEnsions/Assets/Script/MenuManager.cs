@@ -47,13 +47,11 @@ public class MenuManager : MonoBehaviour
 
         if(UIOn)
         {
-            Debug.Log("in menu");
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = UIOn;
         }
         else
         {
-            Debug.Log("in game");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = UIOn;
         }
