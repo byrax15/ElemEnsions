@@ -1,6 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:ElemEnsions/Assets/Prefab/RespawnPoint.prefab.meta
 guid: 742623c9ab3280646845f36cb9972b9f
 PrefabImporter:
+|||||||| f4e948b:ElemEnsions/Assets/Animations/Fall - Copy.anim.meta
+guid: c450f2e8817c22442a20560554b9089f
+NativeFormatImporter:
+========
+guid: 1d2f0bc57ec6c9f4dabe7f9b7a845395
+PrefabImporter:
+>>>>>>>> 1333ec4d2d0d5faf2a178c648abf2516f98c4014:ElemEnsions/Assets/Prefab/InteractableManager.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
