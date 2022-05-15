@@ -11,8 +11,7 @@ public class MenuManager : MonoBehaviour
     private GameObject gameOver;
     private GameObject pauseMenu;
     private GameObject exchangeUI;
-    private PlayerInventory inventory;
-    private PlayerController playerController;
+    private GameObject player;
     private InteractableManager interactableManager;
     private bool isOnUI = false;
     private bool canPause = false;
@@ -46,8 +45,7 @@ public class MenuManager : MonoBehaviour
         pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         exchangeUI = GameObject.FindGameObjectWithTag("ExchangeUI");
         interactableManager = GameObject.FindGameObjectWithTag("InteractableManager").GetComponent<InteractableManager>();
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player");
 
         mainMenu.SetActive(true);
         exchangeUI.SetActive(false);
@@ -95,6 +93,11 @@ public class MenuManager : MonoBehaviour
         gameUI.SetActive(mode);
         StopGame(!mode);
         UIOn = !mode;
+
+        if(!mode) 
+            InputSystem.DisableDevice(Keyboard.current);
+        else 
+            InputSystem.EnableDevice(Keyboard.current);
     }
 
     public void ContinueGame() 
@@ -115,7 +118,7 @@ public class MenuManager : MonoBehaviour
     private void StopGame(bool deactivate)
     {
         Time.timeScale = (deactivate ? 0 : 1);
-        playerController.enabled = !deactivate;
+        player.GetComponent<PlayerController>().enabled = !deactivate;
     }
 
     public void ActivateMainMenu()
@@ -137,7 +140,7 @@ public class MenuManager : MonoBehaviour
     public void OpenExchangeUI()
     {
         ToogleExchangeUI(true);
-        exchangeBtn.SetActive(inventory.PrepareExchange());
+        exchangeBtn.SetActive(player.GetComponent<PlayerInventory>().PrepareExchange());
     }
 
     public void ToogleExchangeUI(bool activate)
@@ -148,7 +151,7 @@ public class MenuManager : MonoBehaviour
 
     public void ExchangeCrystals()
     {
-        inventory.ConfirmExchange();
+        player.GetComponent<PlayerInventory>().ConfirmExchange();
         ToogleExchangeUI(false);
     }
 }
