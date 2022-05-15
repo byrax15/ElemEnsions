@@ -8,11 +8,8 @@ public class PlayerRespawn : MonoBehaviour
 
     public void Respawn()
     {
-        Debug.Log(transform.position);
         StartCoroutine(nameof(respawnCoroutine));
         transform.position = respawnPoint;
-        Debug.Log(transform.position);
-
     }
 
     public void SetRespawnPoint(Vector3 point)
