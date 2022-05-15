@@ -172,11 +172,6 @@ MonoBehaviour:
   _playerTransform: {fileID: 1356071754}
   _playerCamera: {fileID: 687401716}
   _playerController: {fileID: 1356071748}
---- !u!4 &107696867 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1649884478865390838, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
-  m_PrefabInstance: {fileID: 569318442}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &358121484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1610,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: 8660303362559330511, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: _playerHand
       value: 
-      objectReference: {fileID: 107696867}
+      objectReference: {fileID: 1437941279}
     - target: {fileID: 8660303362559330511, guid: 995e0c7367619304bbaa8f5e104ea4bd, type: 3}
       propertyPath: _playerController
       value: 
