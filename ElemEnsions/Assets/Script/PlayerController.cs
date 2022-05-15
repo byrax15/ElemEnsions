@@ -167,4 +167,13 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
                 _interactableManager.DoCurrentInteraction();
     }
+
+    public void OnDrop(InputAction.CallbackContext context)
+    {
+        if (context.performed && HeldItem != null)
+        {
+            HeldItem.transform.parent = null;
+            HeldItem = null;
+        }
+    }
 }

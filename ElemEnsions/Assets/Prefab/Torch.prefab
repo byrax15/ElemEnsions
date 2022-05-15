@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionIndicatorPrefab: {fileID: 1798498274299218444, guid: b27339e8db80042428e533bc83795d93, type: 3}
+  CanInteractMultipleTime: 1
   _playerHand: {fileID: 0}
   _playerController: {fileID: 0}
 --- !u!136 &4526936280716292728

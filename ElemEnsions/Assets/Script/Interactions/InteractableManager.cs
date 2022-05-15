@@ -8,6 +8,7 @@ public class InteractableManager : MonoBehaviour
     [SerializeField] private GameObject _proximityIndicatorPrefab;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private Camera _playerCamera;
+    [SerializeField] private PlayerController _playerController;
     
     private GameObject _currentInteractable;
     
@@ -54,6 +55,11 @@ public class InteractableManager : MonoBehaviour
         
         foreach ((GameObject key, GameObject[] values) in _indicatorsByInteractables)
         {
+            if (_playerController.HeldItem == key)
+            {
+                continue;
+            }
+            
             Vector3 interactableObjectPosition = key.transform.position;
             Vector3 viewportPosition = _playerCamera.WorldToViewportPoint(interactableObjectPosition);
             float distance = Vector3.Distance(_playerTransform.position, interactableObjectPosition);
@@ -92,7 +98,9 @@ public class InteractableManager : MonoBehaviour
         {
             _indicatorsByInteractables[_currentInteractable][CLOSE_INDEX].SetActive(false);
             _indicatorsByInteractables[_currentInteractable][FAR_INDEX].SetActive(false);
-            _indicatorsByInteractables.Remove(_currentInteractable);
+
+            if (!_currentInteractable.GetComponent<Interactable>().CanInteractMultipleTime)
+                _indicatorsByInteractables.Remove(_currentInteractable);
         }
     }
 }
