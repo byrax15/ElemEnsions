@@ -5,6 +5,10 @@ public class Flammable : Interactable
 {
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private float _burningDuration = 3.0f;
+
+    [SerializeField] private AudioSource audioSource;
+
+    [SerializeField] private AudioClip burnAudio;
     
     private static readonly int progress = Shader.PropertyToID("_Progress");
 
@@ -30,6 +34,7 @@ public class Flammable : Interactable
     
     private IEnumerator PlayBurnEffect()
     {
+        StartCoroutine(BurnSound());
         for (float time = 0f; time < _burningDuration; time += Time.deltaTime)
         {
             GetComponent<Renderer>().material.SetFloat(progress, Mathf.Lerp(1, 0, time / _burningDuration));
@@ -38,5 +43,11 @@ public class Flammable : Interactable
         
         GetComponent<Renderer>().material.SetFloat(progress, 0);
         Destroy(gameObject);
+    }
+
+    private IEnumerator BurnSound()
+    {
+        audioSource.PlayOneShot(burnAudio, 0.5f);
+        yield return null;
     }
 }

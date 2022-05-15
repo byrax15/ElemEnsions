@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+using System.Collections;
 
 namespace Script
 {
@@ -16,6 +16,12 @@ namespace Script
 
         public void ChangeLight(Dimension oldDimension, Dimension newDimension)
         {
+            StartCoroutine(ChangeLightDelay(newDimension));
+        }
+
+        private IEnumerator ChangeLightDelay(Dimension newDimension)
+        {
+            yield return new WaitForSeconds(0.3f);
             _light.color = DimensionColor.ColorFor(newDimension);
         }
     }
