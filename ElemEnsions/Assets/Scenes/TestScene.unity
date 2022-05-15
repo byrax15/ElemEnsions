@@ -1373,6 +1373,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1935730341, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: mediator
+      value: 
+      objectReference: {fileID: 1197327810}
     - target: {fileID: 1969420631, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
       propertyPath: rotationSpeed
       value: 300
@@ -1434,6 +1438,14 @@ PrefabInstance:
       value: Player_1
       objectReference: {fileID: 0}
     - target: {fileID: 4398533687515690533, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: mediator
+      value: 
+      objectReference: {fileID: 1197327810}
+    - target: {fileID: 5945261264592935078, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: mediator
+      value: 
+      objectReference: {fileID: 1197327810}
+    - target: {fileID: 7833875706882308218, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
       propertyPath: mediator
       value: 
       objectReference: {fileID: 1197327810}
