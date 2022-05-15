@@ -6,6 +6,9 @@ namespace Script.Interactions
 {
     public class Openable : Interactable
     {
+        [SerializeField] private AudioSource source;
+        [SerializeField] private AudioClip winSound;
+        
         private Transform _cover;
 
         private void Start()
@@ -33,6 +36,7 @@ namespace Script.Interactions
                 }
             }
             
+            source.PlayOneShot(winSound, 0.7f);
             GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>().GameOver(3);
         }
     }
