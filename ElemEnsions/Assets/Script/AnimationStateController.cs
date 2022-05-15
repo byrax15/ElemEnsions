@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
+    [SerializeField] private AudioClip[] jumpClips;
+    [SerializeField] private AudioSource audioSource;
     public Animator animator;
     private bool isRunning;
     private int isRunningHash;
@@ -11,6 +13,7 @@ public class AnimationStateController : MonoBehaviour
     private int onLandHash;
     private bool isSprinting;
     private int isSprintingHash;
+
 
 
 
@@ -34,6 +37,7 @@ public class AnimationStateController : MonoBehaviour
         if (onGround)
             if (!isRunning)
                 animator.SetBool(isRunningHash, true);
+        
     }
 
     public void OnStop()
@@ -62,6 +66,8 @@ public class AnimationStateController : MonoBehaviour
         onGround = false;
         animator.SetTrigger(onJumpHash);
         animator.SetBool(onFallHash, true);
+
+        audioSource.PlayOneShot(jumpClips[(int)Random.Range(0, (float)jumpClips.Length)], 0.7f);
     }
 
     public void OnSprint()
