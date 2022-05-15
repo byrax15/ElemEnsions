@@ -1325,6 +1325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4306008385921086371, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4398533687515690533, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
       propertyPath: mediator
       value: 
@@ -1520,5 +1524,9 @@ PrefabInstance:
       propertyPath: mediator
       value: 
       objectReference: {fileID: 1197327810}
+    - target: {fileID: 2074526096880186375, guid: 104e31f6ebcb10a4b9ab60c52eeb7df2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 104e31f6ebcb10a4b9ab60c52eeb7df2, type: 3}

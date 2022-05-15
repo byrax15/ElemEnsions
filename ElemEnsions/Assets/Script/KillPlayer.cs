@@ -12,8 +12,4 @@ public class KillPlayer : MonoBehaviour
             go.GetComponent<PlayerRespawn>().Respawn();
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-
-    }
 }
