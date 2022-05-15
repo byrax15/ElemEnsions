@@ -1244,6 +1244,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1969420631, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
+      propertyPath: rotationSpeed
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969420631, guid: bab3502e913913840b7c0f5fc38b47df, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 851194031}
