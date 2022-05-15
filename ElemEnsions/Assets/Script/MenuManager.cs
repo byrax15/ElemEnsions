@@ -61,16 +61,12 @@ public class MenuManager : MonoBehaviour
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
             PauseGame();  
 
+        Cursor.visible = UIOn;
+
         if(UIOn)
-        {
             Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = UIOn;
-        }
         else
-        {
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = UIOn;
-        }
     }
 
     public void StartGame()
@@ -115,10 +111,10 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private void StopGame(bool deactivate)
+    private void StopGame(bool disable)
     {
-        Time.timeScale = (deactivate ? 0 : 1);
-        player.GetComponent<PlayerController>().enabled = !deactivate;
+        Time.timeScale = (disable ? 0 : 1);
+        player.GetComponent<PlayerController>().enabled = !disable;
     }
 
     public void ActivateMainMenu()
