@@ -12,11 +12,14 @@ namespace Script
 
         private void Start()
         {
-            if (dimensionChangeSource != null)
-                dimensionChangeSource.AddListener(EnableChildrenIfHasAffinity);
-            
             if (!TryGetComponent(out _affinity))
                 throw new NullReferenceException(nameof(_affinity));
+            
+            if (dimensionChangeSource != null)
+            {
+                dimensionChangeSource.AddListener(EnableChildrenIfHasAffinity);
+                EnableChildrenIfHasAffinity(Dimension.Base, dimensionChangeSource.CurrentDimension);
+            }
         }
 
         private void EnableChildrenIfHasAffinity(Dimension oldDimension, Dimension newDimension)

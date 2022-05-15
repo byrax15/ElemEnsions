@@ -30,13 +30,19 @@ public class Flammable : Interactable
     
     private IEnumerator PlayBurnEffect()
     {
-        for (float time = 0f; time < _burningDuration; time += Time.deltaTime)
+        try
         {
-            GetComponent<Renderer>().material.SetFloat(progress, Mathf.Lerp(1, 0, time / _burningDuration));
-            yield return null;
-        }
+            for (float time = 0f; time < _burningDuration; time += Time.deltaTime)
+            {
+                GetComponent<Renderer>().material.SetFloat(progress, Mathf.Lerp(1, 0, time / _burningDuration));
+                yield return null;
+            }
         
-        GetComponent<Renderer>().material.SetFloat(progress, 0);
-        Destroy(gameObject);
+            GetComponent<Renderer>().material.SetFloat(progress, 0);
+        }
+        finally
+        {
+            Destroy(gameObject);
+        }
     }
 }
