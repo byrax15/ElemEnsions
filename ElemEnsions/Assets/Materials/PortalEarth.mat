@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Portal
+  m_Name: PortalEarth
   m_Shader: {fileID: -6465566751694194690, guid: 11ffa9e07ccbc9f4098314bc6d1c650e, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -58,5 +58,5 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Color_4e44b844ba1f4609b3d377716b26fd56: {r: 25.985136, g: 232.62868, b: 0, a: 0}
+    - Color_4e44b844ba1f4609b3d377716b26fd56: {r: 0.39157256, g: 0.70837605, b: 0.020288562, a: 1}
   m_BuildTextureStacks: []

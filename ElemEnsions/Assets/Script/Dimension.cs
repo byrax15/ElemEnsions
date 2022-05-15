@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Script
 {
@@ -37,5 +39,8 @@ namespace Script
             foundDimension = Dimension.Base;
             return false;
         }
+        
+        public static Dimension FirstNotBaseOrDefault(this IEnumerable<Dimension> dimensions) =>
+            dimensions.FirstOrDefault(dim => dim is not Dimension.Base);
     }
 }

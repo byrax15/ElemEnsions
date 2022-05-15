@@ -4932,7 +4932,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 202b6e1178a66e042ad2148febe7c501, type: 2}
+  - {fileID: 2100000, guid: 7b44b030d837cb445acfae8bdd525916, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4978,6 +4978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5778518386331194180}
   - component: {fileID: 5778518386331194181}
+  - component: {fileID: 1877062550091899841}
   m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
@@ -5062,6 +5063,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1877062550091899841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778518386331194183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &5778518387219729392
 GameObject:
   m_ObjectHideFlags: 0
@@ -5071,8 +5092,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5778518387219729393}
+  - component: {fileID: 3361706642846937764}
+  - component: {fileID: 5558809255878138172}
+  - component: {fileID: 8596245225108148652}
   m_Layer: 8
-  m_Name: Portal
+  m_Name: PortalFire
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5097,6 +5121,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3361706642846937764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778518387219729392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445399ff440d9046b3053891282342b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affinity: 01000000
+--- !u!114 &5558809255878138172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778518387219729392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33d1d290812c0a46b4662fa1a536b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dimensionMediator: {fileID: 0}
+--- !u!65 &8596245225108148652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778518387219729392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0495846, y: 2.4966502, z: 2.6204624}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5778518387331138414
 GameObject:
   m_ObjectHideFlags: 0
