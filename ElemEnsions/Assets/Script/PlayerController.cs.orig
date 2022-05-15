@@ -33,7 +33,12 @@ public class PlayerController : MonoBehaviour
 
     private Transform lastWallJumped;
 
+<<<<<<< HEAD
 
+||||||| parent of 384ef84 (power par univers)
+    private bool canUpdateDoubleJump = true; // TODO update with dimension
+=======
+>>>>>>> 384ef84 (power par univers)
 
     private Vector3 velocity;
     private Vector3 movement;
@@ -94,7 +99,7 @@ public class PlayerController : MonoBehaviour
         cr.Move((velocity + speed * move) * Time.deltaTime);
 
         Quaternion rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);        
     }
 
     public void CheckUpdateCanDoubleJump(bool newValue)
@@ -167,6 +172,7 @@ public class PlayerController : MonoBehaviour
     {
         if(canRun)
         {
+<<<<<<< HEAD
             if (context.performed)
             {
                 speed = sprintSpeed;
@@ -176,6 +182,26 @@ public class PlayerController : MonoBehaviour
             {
                 StopRun();
             }
+||||||| parent of 384ef84 (power par univers)
+            speed = sprintSpeed;
+            runPs.Play();
+        }
+        if(context.canceled)
+        {
+            speed = walkSpeed;
+            runPs.Stop();
+=======
+            if (context.performed)
+            {
+                speed = sprintSpeed;
+                runPs.Play();
+            }
+            if (context.canceled)
+            {
+                speed = walkSpeed;
+                runPs.Stop();
+            }
+>>>>>>> 384ef84 (power par univers)
         }
     }
     public void OnInteract(InputAction.CallbackContext context)
@@ -183,6 +209,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
                 _interactableManager.DoCurrentInteraction();
     }
+<<<<<<< HEAD
     public void OnDrop(InputAction.CallbackContext context)
     {
         if (context.performed && HeldItem != null)
@@ -191,13 +218,11 @@ public class PlayerController : MonoBehaviour
             HeldItem = null;
         }
 
-    }
     public void StopRun()
     {
         speed = walkSpeed;
         runPs.Stop();
     }
-
 
     public void UpdatePowers(Dimension newDimension)
     {
@@ -212,4 +237,18 @@ public class PlayerController : MonoBehaviour
             StopRun();
 
     }
+||||||| parent of 384ef84 (power par univers)
+=======
+
+    public void UpdatePowers(Dimension newDimension)
+    {
+        canUpdateDoubleJump = newDimension == Dimension.Air;
+        canRun = newDimension == Dimension.Fire;
+        canWallJump = newDimension == Dimension.Earth;
+        if(isTouchingWall)
+            isTouchingWall = newDimension == Dimension.Earth;
+        if (canDoubleJump)
+            canDoubleJump = newDimension == Dimension.Air;
+    }
+>>>>>>> 384ef84 (power par univers)
 }
