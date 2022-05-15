@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     private GameObject gameOver;
     private GameObject pauseMenu;
     private GameObject exchangeUI;
+    private GameObject winMenu;
     private GameObject player;
     private InteractableManager interactableManager;
     private bool isOnUI = false;
@@ -151,5 +152,16 @@ public class MenuManager : MonoBehaviour
     {
         player.GetComponent<PlayerInventory>().ConfirmExchange();
         ToogleExchangeUI(false);
+    }
+
+    public void GameOver(float showForSeconds)
+    {
+        StartCoroutine(ShowFor(showForSeconds));
+        IEnumerator ShowFor(float showForSeconds)
+        {
+            gameOver.SetActive(true);
+            yield return new WaitForSeconds(showForSeconds);
+            PauseGame();
+        }
     }
 }
