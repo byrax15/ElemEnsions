@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
 
+    private const int PORTALS_PACK = 3;
     private int crystals = 0;
     private int dimensionSwitches = 0;
+    private int exchangePortal = 0;
+    private int exchangeCrystal = 0;
 
     public int Crystals
     {
@@ -31,14 +34,27 @@ public class PlayerInventory : MonoBehaviour
     }
 
 
-    public void ExchangeCrystal(int qnt)
+    public void PrepareExchange()
     {
-        if(qnt > crystals)
-            GetComponent<PlayerUI>().SetExchangeWarning("Vous n'avez pas assez de cristaux pour faire cet échange.");
+        int portalsValue = 0;
+        exchangeCrystal = 0;
+
+        if(crystals < PORTALS_PACK)
+            GetComponent<PlayerUI>().SetExchangeWarning("Vous n'avez pas assez de cristaux pour faire un échange.");
         else
         {
-            DimensionSwitches += qnt;
-            Crystals -= qnt;
+            exchangePortal = Crystals / PORTALS_PACK;
+            exchangeCrystal = portalsValue / PORTALS_PACK;
+
+            GetComponent<PlayerUI>().UpdateExchangeValues(exchangeCrystal, exchangePortal);
+            
         }
+        GetComponent<PlayerUI>().UpdateExchangeValues(exchangeCrystal, exchangePortal);
+    }
+
+    public void ConfirmExchange()
+    {
+        DimensionSwitches += exchangePortal;
+        Crystals -= exchangeCrystal;
     }
 }

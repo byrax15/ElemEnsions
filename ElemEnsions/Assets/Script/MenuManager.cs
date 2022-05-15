@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject gameUI;
-    [SerializeField] private GameObject gameOver;
-    [SerializeField] private GameObject pauseMenu;
+    private GameObject mainMenu;
+    private GameObject gameUI;
+    private GameObject gameOver;
+    private GameObject pauseMenu;
+    private GameObject exchangeUI;
+    private PlayerInventory inventory;
 
     private bool canPause = false;
 
@@ -19,8 +21,11 @@ public class MenuManager : MonoBehaviour
         gameUI = GameObject.FindGameObjectWithTag("GameUI");
         gameOver = GameObject.FindGameObjectWithTag("GameOverUI");
         pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+        exchangeUI = GameObject.FindGameObjectWithTag("ExchangeUI");
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
 
         mainMenu.SetActive(true);
+        exchangeUI.SetActive(false);
         ToogleGameUI(false);
         gameOver.SetActive(false);
         pauseMenu.SetActive(false);
@@ -47,6 +52,7 @@ public class MenuManager : MonoBehaviour
     public void PauseGame()
     {
         TooglePause(true);
+        exchangeUI.SetActive(false);
         ToogleGameUI(false);
     }
 
@@ -85,5 +91,17 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Quit...");
         Application.Quit();
+    }
+
+    public void OpenExchangeUI()
+    {
+        exchangeUI.SetActive(true);
+        inventory.PrepareExchange();
+    }
+
+    public void ExchangeCrystals()
+    {
+        inventory.ConfirmExchange();
+        exchangeUI.SetActive(false);
     }
 }
