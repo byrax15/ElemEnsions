@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.InputSystem;
+using System.Collections;
 using Script;
 using System;
 
@@ -11,6 +11,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private DimensionChangeMediator mediator;
 
     [SerializeField] private float maxMusicVolume = 0.8f;
+
+    [SerializeField] private AudioClip portalClip;
+
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
@@ -32,6 +36,7 @@ public class AudioManager : MonoBehaviour
     public void SwitchDimension(Dimension oldDim, Dimension newDim)
     {
         StartCoroutine(FadeMixerGroup.EndFade(mixer, oldDim.ToString(), 5.0f));
+        audioSource.PlayOneShot(portalClip, 0.7f);
         StartCoroutine(FadeMixerGroup.StartFade(mixer, newDim.ToString(), 5.0f, maxMusicVolume));
     }
 }
