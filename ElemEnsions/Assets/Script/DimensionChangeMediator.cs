@@ -36,10 +36,7 @@ namespace Script
                 if (!callback.action.name.TryGetContainedDimension(out var dimension))
                     return;
 
-                ChangeDimension(dimension == _activeDimension
-                    ? Dimension.Base
-                    : dimension
-                );
+                ChangeDimension(dimension);
             }
         }
 
