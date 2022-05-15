@@ -20,7 +20,7 @@ public class ToggleWaterCollision : MonoBehaviour
     {
         foreach(MeshCollider meshCollider in GetComponentsInChildren<MeshCollider>())
         {
-            meshCollider.enabled = isOn;
+            meshCollider.isTrigger = !isOn;
         }
     }
 }
