@@ -1,15 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInventory : MonoBehaviour
 {
-
     private const int PORTALS_PACK = 3;
     private int crystals = 0;
     private int dimensionSwitches = 0;
     private int exchangePortal = 0;
     private int exchangeCrystal = 0;
+
+    private DimensionChangeMediator _dimensionMediator;
+
+    private void Start()
+    {
+        _dimensionMediator = GameObject.FindGameObjectWithTag("DimensionMediator")
+            .GetComponent<DimensionChangeMediator>();
+    }
 
     public int Crystals
     {
@@ -39,14 +49,14 @@ public class PlayerInventory : MonoBehaviour
         exchangePortal = 0;
         exchangeCrystal = 0;
 
-        if(crystals < PORTALS_PACK)
+        if (crystals < PORTALS_PACK)
         {
             GetComponent<PlayerUI>().SetExchangeWarning("Vous n'avez pas assez de cristaux pour faire un échange.");
             GetComponent<PlayerUI>().UpdateExchangeValues(exchangeCrystal, exchangePortal);
 
             return false;
         }
-            
+
         exchangePortal = Crystals / PORTALS_PACK;
         exchangeCrystal = exchangePortal * PORTALS_PACK;
 
@@ -60,9 +70,19 @@ public class PlayerInventory : MonoBehaviour
         Crystals -= exchangeCrystal;
     }
 
-    public void UseDimensionSwitch()
+    public void UseDimensionSwitch(InputAction.CallbackContext callback)
     {
-        if(DimensionSwitches > 0)
-            DimensionSwitches--;
-    }
+        if (callback.started)
+        {
+            
+            if (DimensionSwitches <= 0)
+                return;
+            
+            if (!callback.action.name.TryGetContainedDimension(out var dimension))
+                return;
+
+            if (_dimensionMediator.TryChangeDimension(dimension))
+                DimensionSwitches--;
+        }
+    } 
 }

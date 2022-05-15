@@ -28,6 +28,15 @@ namespace Script
             dimensionChanged.Invoke(_activeDimension, newDimension);
             _activeDimension = newDimension;
         }
+        
+        public bool TryChangeDimension(Dimension newDimension)
+        {
+            if (_activeDimension == newDimension)
+                return false;
+
+            ChangeDimension(newDimension);
+            return true;
+        }
 
         public void DebugChangeDimension(InputAction.CallbackContext callback)
         {

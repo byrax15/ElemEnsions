@@ -10,8 +10,8 @@ public class MenuManager : MonoBehaviour
     private GameObject gameUI;
     private GameObject gameOver;
     private GameObject pauseMenu;
+    private GameObject creditsPage;
     private GameObject exchangeUI;
-    private GameObject winMenu;
     private GameObject player;
     private InteractableManager interactableManager;
     private bool isOnUI = false;
@@ -45,6 +45,7 @@ public class MenuManager : MonoBehaviour
         gameOver = GameObject.FindGameObjectWithTag("GameOverUI");
         pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         exchangeUI = GameObject.FindGameObjectWithTag("ExchangeUI");
+        creditsPage = GameObject.FindGameObjectWithTag("CreditsPage");
         interactableManager = GameObject.FindGameObjectWithTag("InteractableManager").GetComponent<InteractableManager>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -53,7 +54,8 @@ public class MenuManager : MonoBehaviour
         ToogleGameUI(false);
         gameOver.SetActive(false);
         pauseMenu.SetActive(false);
-
+        creditsPage.SetActive(false);
+        
         Cursor.lockState = CursorLockMode.Confined;
     }
 
@@ -154,6 +156,18 @@ public class MenuManager : MonoBehaviour
         ToogleExchangeUI(false);
     }
 
+    public void OpenCreditsPage()
+    {
+        creditsPage.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+
+    public void CloseCreditsPage()
+    {
+        creditsPage.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+    
     public void GameOver(float showForSeconds)
     {
         StartCoroutine(ShowFor(showForSeconds));

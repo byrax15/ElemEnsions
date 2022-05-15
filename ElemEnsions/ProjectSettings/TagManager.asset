@@ -20,6 +20,7 @@ TagManager:
   - ExchangeUI
   - InteractableManager
   - WinMenu
+  - DimensionMediator
   layers:
   - Default
   - TransparentFX
